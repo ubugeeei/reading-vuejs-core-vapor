@@ -5,12 +5,16 @@
   "packageManager": "pnpm@9.10.0",
   "license": "ISC",
   "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
     "lint": "textlint src",
     "lint:fix": "textlint src --fix"
   },
   "devDependencies": {
     "textlint": "^14.2.0",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
-    "textlint-rule-prh": "^6.0.0"
+    "textlint-rule-prh": "^6.0.0",
+    "vitepress": "^1.3.4"
   }
 }
