@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": {
+        "space": "always"
+      }
+    },
+    "prh": {
+      "rulePaths" :["rules/prh-punctuation-mark.yml"]
+    }
+  }
+}

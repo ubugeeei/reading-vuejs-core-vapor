@@ -5,6 +5,12 @@
   "packageManager": "pnpm@9.10.0",
   "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "textlint src",
+    "lint:fix": "textlint src --fix"
+  },
+  "devDependencies": {
+    "textlint": "^14.2.0",
+    "textlint-rule-preset-ja-spacing": "^2.4.3",
+    "textlint-rule-prh": "^6.0.0"
   }
 }
