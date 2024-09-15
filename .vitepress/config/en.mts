@@ -1,17 +1,13 @@
-import { defineConfig } from "vitepress";
+import type{ DefaultTheme, UserConfig } from "vitepress";
 
-// https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default (): UserConfig<DefaultTheme.Config> => ({
   title: "Reading vuejs/core-vapor",
   description: "Reading vuejs/core-vapor",
-  srcDir: "src",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
       { text: "Examples", link: "/markdown-examples" },
     ],
-
     sidebar: [
       {
         text: "Examples",
@@ -20,10 +16,6 @@ export default defineConfig({
           { text: "Runtime API Examples", link: "/api-examples" },
         ],
       },
-    ],
-
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
     ],
   },
 });
