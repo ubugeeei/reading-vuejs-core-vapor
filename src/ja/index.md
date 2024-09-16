@@ -1,5 +1,9 @@
 # vuejs/core-vapor を読む
 
+<div align="center">
+  <img src="/cover.png" width="600px" alt="Reading vuejs/core-vapor"/>
+</div>
+
 ## はじめに
 
 この本を手に取っていただき，ありがとうございます！\
@@ -46,12 +50,12 @@ https://ublog.dev/
 
 https://github.com/sponsors/ubugeeei
 
-<img src="https://raw.githubusercontent.com/ubugeeei/sponsors/main/sponsors.png" alt="ubugeeei's sponsors" width="400px">
+<img class="sponsors" src="https://raw.githubusercontent.com/ubugeeei/sponsors/main/sponsors.png" alt="ubugeeei's sponsors" width="400px">
 
 </div>
 
 <style scoped>
-img {
+img.sponsors {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 </style>
