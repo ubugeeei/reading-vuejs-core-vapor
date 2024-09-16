@@ -1,6 +1,4 @@
 import DefaultTheme from "vitepress/theme-without-fonts";
-import "./styles/link-preview.css";
+import "../plugins/markdown-it/github/styles.css";
 
-export default {
-  ...DefaultTheme,
-};
+export default { ...DefaultTheme };

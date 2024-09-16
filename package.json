@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "ubugeeei",
   "packageManager": "pnpm@9.10.0",
+  "type": "module",
   "license": "ISC",
   "scripts": {
     "dev": "vitepress dev",
@@ -12,10 +13,15 @@
     "lint:fix": "textlint src --fix"
   },
   "devDependencies": {
-    "markdown-it-link-preview": "^1.1.4",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.5.5",
+    "highlight.js": "^11.10.0",
+    "node-html-parser": "^6.1.13",
+    "synckit": "^0.8.5",
     "textlint": "^14.2.0",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
     "textlint-rule-prh": "^6.0.0",
-    "vitepress": "^1.3.4"
+    "vitepress": "^1.3.4",
+    "xmlhttprequest": "^1.8.0"
   }
 }

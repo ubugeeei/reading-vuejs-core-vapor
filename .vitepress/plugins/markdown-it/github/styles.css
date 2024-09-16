@@ -1,0 +1,31 @@
+.github-source {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background-color: #191919;
+
+  .meta {
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    background-color: #1f1f1f;
+    border-bottom: 1px solid var(--vp-c-divider);
+    font-size: 0.8em;
+    color: #666 !important;
+
+    .filename {
+      font-weight: bold;
+    }
+  }
+
+  .at {
+    color: #f8f8f8;
+  }
+
+  .code {
+    margin: 0;
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+}
