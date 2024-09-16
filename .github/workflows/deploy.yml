@@ -1,4 +1,4 @@
-name: Deploy chibivue Book to Pages
+name: Deploy Reading vuejs/core-vapor Book
 
 on:
   push:

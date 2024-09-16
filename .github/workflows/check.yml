@@ -1,4 +1,4 @@
-name: Check packages
+name: Check
 
 on: push
 

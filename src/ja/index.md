@@ -8,7 +8,7 @@ TBD
 
 ## Sponsors
 
-もしよろしければ、私の仕事を応援していただけると大変ありがたいです！
+もしよろしければ，私の仕事を応援していただけると大変ありがたいです！
 
 https://github.com/sponsors/ubugeeei
 
