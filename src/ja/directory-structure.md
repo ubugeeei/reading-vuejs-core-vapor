@@ -24,7 +24,7 @@ v3 のリポジトリは [pnpm workspace](https://pnpm.io/workspaces) によっ�
 
 core-vapor では新たに `compiler-vapor` と `runtime-vapor` が追加されています．
 
-- [https://github.com/vuejs/core-vapor/packages/comiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/comiler-vapor)
+- [https://github.com/vuejs/core-vapor/packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/comiler-vapor)
 - [https://github.com/vuejs/core-vapor/packages/runtime-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor)
 
 ---
