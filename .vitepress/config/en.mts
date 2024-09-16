@@ -13,6 +13,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "Let's Dive In!",
         link: "/lets-deep-dive",
       },
+      {
+        text: "Directory Structure",
+        link: "/directory-structure",
+      },
     ],
   },
 });
