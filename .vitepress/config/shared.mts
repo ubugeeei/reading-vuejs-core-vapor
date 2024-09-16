@@ -38,5 +38,40 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         href: "/logo.png",
       },
     ],
+
+    // og
+    ["meta", { property: "og:site_name", content: "Reading vuejs/core-vapor" }],
+    [
+      "meta",
+      {
+        property: "og:url",
+        content: "https://ubugeeei.github.io/reading-vuejs-core-vapor",
+      },
+    ],
+    ["meta", { property: "og:title", content: "Reading vuejs/core-vapor" }],
+    [
+      "meta",
+      {
+        property: "og:description",
+        content: "Reading vuejs/core-vapor",
+      },
+    ],
+    [
+      "meta",
+      {
+        property: "og:image",
+        content: "/cover.png",
+      },
+    ],
+    ["meta", { property: "og:image:alt", content: "Reading vuejs/core-vapor" }],
+    ["meta", { name: "twitter:site", content: "Reading vuejs/core-vapor" }],
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+    ["meta", { name: "twitter:title", content: "Reading vuejs/core-vapor" }],
+    [
+      "meta",
+      { name: "twitter:description", content: "Reading vuejs/core-vapor" },
+    ],
+    ["meta", { name: "twitter:image", content: "/cover.png" }],
+    ["meta", { name: "twitter:image:alt", content: "Reading vuejs/core-vapor" }],
   ],
 });
