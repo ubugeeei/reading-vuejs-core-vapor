@@ -34,7 +34,7 @@
 
 Vue.js メンバー, Vue.js Japan User Group コアスタッフ．\
 Vapor Mode の開発に立ち上げ (2023/11) から携わる. \
-2023/10 に vuejs/core-vapor の external collaborator になる.\
+2023/12 に vuejs/core-vapor の external collaborator になる.\
 2024/4 に vuejs organization のメンバーになり，Vapor Team のメンバーになる.
 
 https://ublog.dev/

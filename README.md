@@ -40,7 +40,7 @@ While it’s aimed at more advanced readers, I hope you find something helpful, 
 
 Vue.js member and core staff of the Vue.js Japan User Group.\
 Involved in the development of Vapor Mode from its inception (November 2023).\
-Became an external collaborator for vuejs/core-vapor in October 2023.\
+Became an external collaborator for vuejs/core-vapor in December 2023.\
 In April 2024, joined the Vue.js organization and became a member of the Vapor Team.
 
 https://ublog.dev/
