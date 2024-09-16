@@ -13,6 +13,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "さぁ！飛び込もう！",
         link: "/ja/lets-deep-dive",
       },
+      {
+        text: "core-vapor のディレクトリ構成",
+        link: "/ja/directory-structure",
+      }
     ],
   },
 });
