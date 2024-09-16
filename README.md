@@ -2,7 +2,7 @@
 
 <a href="https://ubugeeei.github.io/reading-vuejs-core-vapor/" target="_blank">
 
-<img src="./src/public/cover.png" width="500px" alt="Reading vuejs/core-vapor"/>
+<img src="./src/public/cover.png" width="1000px" alt="Reading vuejs/core-vapor"/>
 
 </a>
 
