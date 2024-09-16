@@ -42,3 +42,8 @@ Vapor Mode は現在 (2024/9 時点) はまだ R&D (研究開発) の段階で�
 Vue.js の実装に関連するリポジトリ:
 
 ![related repository](/lets-deep-dive/related-repository.drawio.png)
+
+また，このリポジトリは R&D であることも相まって，不定期的に大規模なリファクタリングが行われることがあります．\
+この本では，2024/9/16 時点のコードに固定して進めていこうと思います．\
+commit で言うと，6700 commit 目の [`30583b9ee1c696d3cb836f0bfd969793e57e849d`](https://github.com/vuejs/core-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d) までの時点のソースコード見ていこうと思います．\
+![vuejs/core@30583b9ee1c696d3cb836f0bfd969793e57e849d](/lets-deep-dive/30583b9ee1c696d3cb836f0bfd969793e57e849d.png)

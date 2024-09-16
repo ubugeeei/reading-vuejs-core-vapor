@@ -42,3 +42,7 @@ For this book, we’ll be focusing on the implementation of Vapor Mode, which me
 Related repositories for the Vue.js implementation:
 
 ![related repository](/lets-deep-dive/related-repository.drawio.png)
+Additionally, given that this repository is in the R&D phase, it occasionally undergoes large-scale refactoring at irregular intervals.\
+For this book, we'll focus on the code as of **September 16, 2024**.\
+In terms of commits, we'll be looking at the source code up until the 6,700th commit, specifically [`30583b9ee1c696d3cb836f0bfd969793e57e849d`](https://github.com/vuejs/core-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d).\
+![vuejs/core@30583b9ee1c696d3cb836f0bfd969793e57e849d](/lets-deep-dive/30583b9ee1c696d3cb836f0bfd969793e57e849d.png)
