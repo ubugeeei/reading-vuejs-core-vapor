@@ -60,7 +60,7 @@ export default (): UserConfig<DefaultTheme.Config> => ({
       "meta",
       {
         property: "og:image",
-        content: "/cover.png",
+        content: "https://github.com/ubugeeei/reading-vuejs-core-vapor/blob/main/src/public/cover.png?raw=true",
       },
     ],
     ["meta", { property: "og:image:alt", content: "Reading vuejs/core-vapor" }],
@@ -71,7 +71,7 @@ export default (): UserConfig<DefaultTheme.Config> => ({
       "meta",
       { name: "twitter:description", content: "Reading vuejs/core-vapor" },
     ],
-    ["meta", { name: "twitter:image", content: "/cover.png" }],
+    ["meta", { name: "twitter:image", content: "https://github.com/ubugeeei/reading-vuejs-core-vapor/blob/main/src/public/cover.png?raw=true" }],
     ["meta", { name: "twitter:image:alt", content: "Reading vuejs/core-vapor" }],
   ],
 });
