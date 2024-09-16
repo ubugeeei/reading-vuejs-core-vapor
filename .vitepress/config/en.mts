@@ -9,6 +9,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "About This Book",
         link: "/",
       },
+      {
+        text: "Let's Dive In!",
+        link: "/lets-deep-dive",
+      },
     ],
   },
 });
