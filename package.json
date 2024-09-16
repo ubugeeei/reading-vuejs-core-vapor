@@ -12,6 +12,7 @@
     "lint:fix": "textlint src --fix"
   },
   "devDependencies": {
+    "markdown-it-link-preview": "^1.1.4",
     "textlint": "^14.2.0",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
     "textlint-rule-prh": "^6.0.0",
