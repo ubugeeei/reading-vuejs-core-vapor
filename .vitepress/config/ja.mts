@@ -4,10 +4,6 @@ export default (): UserConfig<DefaultTheme.Config> => ({
   title: "vuejs/core-vapor を読む",
   description: "vuejs/core-vapor を読む",
   themeConfig: {
-    nav: [
-      { text: "ホーム", link: "/ja" },
-      { text: "例", link: "/ja/markdown-examples" },
-    ],
     sidebar: [
       {
         text: "例",
