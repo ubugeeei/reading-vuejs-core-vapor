@@ -6,11 +6,8 @@ export default (): UserConfig<DefaultTheme.Config> => ({
   themeConfig: {
     sidebar: [
       {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
+        text: "About This Book",
+        link: "/",
       },
     ],
   },

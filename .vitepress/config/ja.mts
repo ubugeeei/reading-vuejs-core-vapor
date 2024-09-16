@@ -6,11 +6,8 @@ export default (): UserConfig<DefaultTheme.Config> => ({
   themeConfig: {
     sidebar: [
       {
-        text: "例",
-        items: [
-          { text: "マークダウン例", link: "/ja/markdown-examples" },
-          { text: "ランタイム API 例", link: "/ja/api-examples" },
-        ],
+        text: "この本について",
+        link: "/ja/",
       },
     ],
   },

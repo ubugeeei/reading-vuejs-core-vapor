@@ -1,19 +1,16 @@
-# vuejs/core-vapor を読む
-
-## この本について
+# この本について
 
 TBD
 
 <div align="center">
 
-## Sponsors
+# スポンサー
 
-もしよろしければ，私の仕事を応援していただけると大変ありがたいです！
+もしよろしければ，私の仕事を応援していただけると嬉しいです！
 
 https://github.com/sponsors/ubugeeei
 
 <img src="https://raw.githubusercontent.com/ubugeeei/sponsors/main/sponsors.png" alt="ubugeeei's sponsors">
-
 
 </div>
 
