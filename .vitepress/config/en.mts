@@ -17,6 +17,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "Directory Structure",
         link: "/directory-structure",
       },
+      {
+        text: "How to Proceed?",
+        link: "/how-read",
+      },
     ],
   },
 });
