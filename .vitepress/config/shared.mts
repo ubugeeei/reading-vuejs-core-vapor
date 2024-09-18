@@ -13,6 +13,13 @@ export default (): UserConfig<DefaultTheme.Config> => ({
       },
     ],
     search: { provider: "local" },
+    lastUpdated: {
+      text: "Updated at",
+      formatOptions: {
+        dateStyle: "full",
+        timeStyle: "medium",
+      },
+    },
     outline: "deep",
     footer: {
       copyright: `© 2024-PRESENT ubugeeei All rights reserved.`,
@@ -31,13 +38,7 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/circus.css",
       },
     ],
-    [
-      "link",
-      {
-        rel: "icon",
-        href: "/logo.png",
-      },
-    ],
+    ["link", { rel: "icon", href: "/logo.png" }],
 
     // og
     ["meta", { property: "og:site_name", content: "Reading vuejs/core-vapor" }],
@@ -60,7 +61,8 @@ export default (): UserConfig<DefaultTheme.Config> => ({
       "meta",
       {
         property: "og:image",
-        content: "https://github.com/ubugeeei/reading-vuejs-core-vapor/blob/main/src/public/cover.png?raw=true",
+        content:
+          "https://github.com/ubugeeei/reading-vuejs-core-vapor/blob/main/src/public/cover.png?raw=true",
       },
     ],
     ["meta", { property: "og:image:alt", content: "Reading vuejs/core-vapor" }],
@@ -71,7 +73,17 @@ export default (): UserConfig<DefaultTheme.Config> => ({
       "meta",
       { name: "twitter:description", content: "Reading vuejs/core-vapor" },
     ],
-    ["meta", { name: "twitter:image", content: "https://github.com/ubugeeei/reading-vuejs-core-vapor/blob/main/src/public/cover.png?raw=true" }],
-    ["meta", { name: "twitter:image:alt", content: "Reading vuejs/core-vapor" }],
+    [
+      "meta",
+      {
+        name: "twitter:image",
+        content:
+          "https://github.com/ubugeeei/reading-vuejs-core-vapor/blob/main/src/public/cover.png?raw=true",
+      },
+    ],
+    [
+      "meta",
+      { name: "twitter:image:alt", content: "Reading vuejs/core-vapor" },
+    ],
   ],
 });
