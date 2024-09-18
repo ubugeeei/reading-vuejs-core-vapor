@@ -16,7 +16,11 @@ export default (): UserConfig<DefaultTheme.Config> => ({
       {
         text: "core-vapor のディレクトリ構成",
         link: "/ja/directory-structure",
-      }
+      },
+      {
+        text: "どう読み進める？",
+        link: "/ja/how-read",
+      },
     ],
   },
 });
