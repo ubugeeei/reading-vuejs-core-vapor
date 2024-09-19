@@ -2,7 +2,7 @@ name: Deploy Reading vuejs/core-vapor Book
 
 on:
   push:
-    branches: [main, book/read-simplest-component]
+    branches: [main]
 
   workflow_dispatch:
 

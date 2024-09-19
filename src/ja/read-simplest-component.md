@@ -42,7 +42,7 @@ export default _sfc_main;
 ```
 
 今回はこれを読み解いていきます．\
-進め方でも説明した通り，読むべきものは 「出力をするための実装」と「出力されたコードの中身」であり．手順は
+進め方でも説明した通り，読むべきものは「出力をするための実装」と「出力されたコードの中身」であり．手順は
 
 1. Vue.js の SFC を書く
 1. Vapor Mode のコンパイラにかける
@@ -132,7 +132,7 @@ Vapor Mode のコンパイラの実装は概ね `/packages/compiler-vapor` に�
 
 ここで，「概ね」と言ったのには理由があります．
 
-一般的なコンパイラは，「parser」と「generator (codegen)」 というもので実装されます．\
+一般的なコンパイラは，「parser」と「generator (codegen)」というもので実装されます．\
 parser によってソースコードを解析し，AST (Abstract Syntax Tree) に変換します．\
 得られた AST を元に，generator がコードを生成します．\
 Vue.js に関してもこの点は同じです．
