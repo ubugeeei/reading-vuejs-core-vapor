@@ -21,6 +21,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "どう読み進める？",
         link: "/ja/how-read",
       },
+      {
+        text: "単純なコンポーネントを読む",
+        link: "/ja/read-simplest-component",
+      },
     ],
   },
 });
