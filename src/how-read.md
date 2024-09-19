@@ -77,8 +77,7 @@ It's a tool to check the compilation results of Vue.js templates (not limited to
 So, you can't see what the styles or scripts in an SFC are transformed into.
 
 So, let's use the Playground! Or so I'd like to say, but there's a slight problem. \
-This time, we'll be reading the code at `30583b9ee1c696d3cb836f0bfd969793e57e849d`, \
-but the Playground hosted at this link cannot fix the commit. \
+This time, we'll be reading the code at [30583b9ee1c696d3cb836f0bfd969793e57e849d](https://github.com/vuejs/core-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d), but the Playground hosted at this link cannot fix the commit. \
 Since Vapor Mode is currently in R&D, the source code changes frequently. \
 It would be quite inconvenient if it changes while we're reading it, so let's find a way to use the vuejs/core-vapor we just checked out locally to confirm things.
 
