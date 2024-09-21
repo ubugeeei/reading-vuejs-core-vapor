@@ -197,7 +197,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L26-L31
 
-これをみると `Block` が概ねどう言うものがわかるはずです．\
+これをみると `Block` が概ねどういうものがわかるはずです．\
 `Block` は Node (DOM Node), Fragment, Component または Block の配列を取ります．\
 基本的には Vapor はこの `Block` という単位で UI を構築していきます．
 
