@@ -9,20 +9,21 @@
 コンパイラの概要の際にも話した通り，transformer というコンセプト自体は `vuejs/core` の時から，`compiler-core` に存在していました．
 その実装はこのあたりにあります．
 
-- [https://github.com/vuejs/core-vapor/packages/compiler-core/src/transform.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/transform.ts)
-- [https://github.com/vuejs/core-vapor/packages/compiler-core/src/transforms/](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/transforms)
+- [packages/compiler-core/src/transform.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/transform.ts)
+- [packages/compiler-core/src/transforms/](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/transforms)
 
 Vapor Mode には関係ないので今回は読み飛ばしますが，Vapor Mode の transformer もこの元々あった transformer を参考に設計されています．(使われてはいません)\
 今回読んでいく Vapor Mode の transformer はこのあたりに実装があります．
 
-- [https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transform.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts)
-- [https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transforms/](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms)
+- [packages/compiler-vapor/src/transform.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts)
+- [packages/compiler-vapor/src/transforms/](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms)
 
 `transform.ts` に実装された `transform` という関数をコンパイラで呼び出しています．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L209-L213
 
 呼び出し (compile: parse -> transform -> generate):
+
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/compile.ts#L36-L40
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/compile.ts#L62
@@ -166,7 +167,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 実装はここにあります．
 
-[https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transforms/transformText.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts)
+[packages/compiler-vapor/src/transforms/transformText.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts)
 
 今見ている `node` の `type` が `ELEMENT` の場合で，children の node が全て text-like で，interpolation を含む場合にはその node を「text のコンテナ」として扱い処理 (`processTextLikeContainer`) します．\
 text-like というのは text または interpolation です．
@@ -204,7 +205,7 @@ template は `"Hello, Vapor!"` になります．
 
 実装はここにあります．
 
-[https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transforms/transformElement.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts)
+[packages/compiler-vapor/src/transforms/transformElement.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts)
 
 まず前提として，この transform は全体として `onExit` のライフサイクルに乗っています．\
 関数を return している事に注目してください．
@@ -245,7 +246,7 @@ transform の実行順的には, `transformText` -> `transformElement` -> `trans
 
 実装はここにあります．
 
-[https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transforms/transformChildren.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts)
+[packages/compiler-vapor/src/transforms/transformChildren.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts)
 
 やっていることは単純で，入ってきた `node` の `children` に対して一つづ順に `transformNode` を実行していきます．
 

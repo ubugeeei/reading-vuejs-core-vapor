@@ -10,7 +10,7 @@ Vapor Mode is a new compiler implementation for Vue.js.\
 
 The implementation of the Vapor Mode compiler is mostly in `/packages/compiler-vapor`.
 
-[https://github.com/vuejs/core-vapor/packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor)
+[packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor)
 
 Here, there's a reason why I said "mostly."
 

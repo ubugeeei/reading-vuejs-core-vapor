@@ -9,23 +9,23 @@
 
 v3 のリポジトリは [pnpm workspace](https://pnpm.io/workspaces) によってモノレポで管理されています．\
 各パッケージは `/packages` ディレクトリに配置されています．\
-[https://github.com/vuejs/core-vapor/packages](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages)
+[packages](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages)
 
 そして，それらのパッケージは大きく分けてコンパイラとランタイムの 2 つに分けられます．\
 `compiler-` で始まるパッケージはコンパイラに関連するパッケージで，`runtime-` で始まるパッケージはランタイムに関連するパッケージです．
 
-- [https://github.com/vuejs/core-vaporpackages/compiler-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core)
-- [https://github.com/vuejs/core-vapor/packages/compiler-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom)
-- [https://github.com/vuejs/core-vapor/packages/compiler-sfc](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
-- [https://github.com/vuejs/core-vapor/packages/runtime-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core)
-- [https://github.com/vuejs/core-vapor/packages/runtime-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom)
+- [packages/compiler-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core)
+- [packages/compiler-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom)
+- [packages/compiler-sfc](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
+- [packages/runtime-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core)
+- [packages/runtime-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom)
 
 ---
 
 core-vapor では新たに `compiler-vapor` と `runtime-vapor` が追加されています．
 
-- [https://github.com/vuejs/core-vapor/packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/comiler-vapor)
-- [https://github.com/vuejs/core-vapor/packages/runtime-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor)
+- [packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/comiler-vapor)
+- [packages/runtime-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor)
 
 ---
 
@@ -33,15 +33,15 @@ core-vapor では新たに `compiler-vapor` と `runtime-vapor` が追加され�
 `ref` や `computed`, `watch` などの実装はランタイムパッケージからは独立して `@vue/reactivity` として提供されています．\
 こちらは `/packages/reactivity` に配置されています．
 
-- [https://github.com/vuejs/core-vapor/packages/reactivity](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/reactivity)
+- [packages/reactivity](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/reactivity)
 
 ---
 
 そして，Vue.js のエントリとなるパッケージは `/packages/vue` に配置されています．\
 `core-vapor` においては，これに加え，`/packages/vue-vapor` という Vapor Mode のエントリとなるパッケージが追加されています．
 
-- [https://github.com/vuejs/core-vapor/packages/vue](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue)
-- [https://github.com/vuejs/core-vapor/packages/vue-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor)
+- [packages/vue](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue)
+- [packages/vue-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor)
 
 ---
 

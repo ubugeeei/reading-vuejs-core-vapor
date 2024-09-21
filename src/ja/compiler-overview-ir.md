@@ -13,7 +13,7 @@ IR は Intermediate Representation の略で，中間表現のことです．\
 `SFCDescriptor` や `AST` が概ねユーザー(Web アプリケーション開発者)の入力コードを構造化したものだったのに対し，`IR` は言わば「出力コードを構造化したもの」です．\
 `IR` の定義は ir/index.ts にあります．
 
-[https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/ir/index.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts)
+[packages/compiler-vapor/src/ir/index.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts)
 
 最初に読んだ小さいコンポーネントのコンパイラ結果を思い出して欲しいのですが，
 

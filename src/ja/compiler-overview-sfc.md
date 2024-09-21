@@ -4,7 +4,7 @@
 
 SFC のパーサーは SFC のコンパイラの一部なので，`compiler-sfc` に実装されています．
 
-[https://github.com/vuejs/core-vapor/packages/compiler-sfc](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
+[packages/compiler-sfc](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
 
 ## SFCDescriptor
 

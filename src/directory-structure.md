@@ -9,23 +9,23 @@ By distinguishing what is specific to core-vapor and what comes from the origina
 
 The v3 repository is managed as a monorepo using [pnpm workspace](https://pnpm.io/workspaces). \
 Each package is located in the `/packages` directory.\
-[https://github.com/vuejs/core-vapor/packages](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages)
+[packages](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages)
 
 These packages are broadly divided into two categories: compiler and runtime. \
 Packages starting with `compiler-` are related to the compiler, and those starting with `runtime-` are related to the runtime.
 
-- [https://github.com/vuejs/core-vapor/packages/compiler-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core)
-- [https://github.com/vuejs/core-vapor/packages/compiler-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom)
-- [https://github.com/vuejs/core-vapor/packages/compiler-sfc](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
-- [https://github.com/vuejs/core-vapor/packages/runtime-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core)
-- [https://github.com/vuejs/core-vapor/packages/runtime-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom)
+- [packages/compiler-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core)
+- [packages/compiler-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom)
+- [packages/compiler-sfc](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
+- [packages/runtime-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core)
+- [packages/runtime-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom)
 
 ---
 
 In core-vapor, new packages `compiler-vapor` and `runtime-vapor` have been added.
 
-- [https://github.com/vuejs/core-vapor/packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor)
-- [https://github.com/vuejs/core-vapor/packages/runtime-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor)
+- [packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor)
+- [packages/runtime-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor)
 
 ---
 
@@ -33,15 +33,15 @@ Next, an important package is `reactivity`. \
 Implementations like `ref`, `computed`, and `watch` are provided as `@vue/reactivity`, independently from the runtime packages. \
 This is located in `/packages/reactivity`.
 
-- [https://github.com/vuejs/core-vapor/packages/reactivity](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/reactivity)
+- [packages/reactivity](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/reactivity)
 
 ---
 
 The package that serves as the entry point for Vue.js is located in `/packages/vue`. \
 In `core-vapor`, in addition to this, a package called `/packages/vue-vapor`, which serves as the entry point for Vapor Mode, has been added.
 
-- [https://github.com/vuejs/core-vapor/packages/vue](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue)
-- [https://github.com/vuejs/core-vapor/packages/vue-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor)
+- [packages/vue](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue)
+- [packages/vue-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor)
 
 ---
 

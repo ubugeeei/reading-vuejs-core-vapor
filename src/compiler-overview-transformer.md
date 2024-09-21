@@ -8,14 +8,14 @@ Next, let's look at the `Transformer` that converts `AST` to `IR`.
 
 As we discussed in the compiler overview, the concept of a transformer has existed in `compiler-core` since `vuejs/core`. The implementation is around here.
 
-- [https://github.com/vuejs/core-vapor/packages/compiler-core/src/transform.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/transform.ts)
-- [https://github.com/vuejs/core-vapor/packages/compiler-core/src/transforms/](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/transforms)
+- [packages/compiler-core/src/transform.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/transform.ts)
+- [packages/compiler-core/src/transforms/](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/transforms)
 
 Since it is not related to Vapor Mode, we will skip it this time, but the transformer in Vapor Mode is designed with reference to the original transformer (not used).\
 The transformer for Vapor Mode that we will read this time is implemented around here.
 
-- [https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transform.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts)
-- [https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transforms/](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms)
+- [packages/compiler-vapor/src/transform.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts)
+- [packages/compiler-vapor/src/transforms/](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms)
 
 We are calling a function called `transform` implemented in `transform.ts` in the compiler.
 
@@ -165,7 +165,7 @@ Since we are not yet using directives or slots this time, we will read `transfor
 
 The implementation is here.
 
-[https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transforms/transformText.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts)
+[packages/compiler-vapor/src/transforms/transformText.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts)
 
 If the `type` of the `node` we are looking at is `ELEMENT`, and all its child nodes are text-like and contain interpolations, we treat that node as a "text container" and process it (`processTextLikeContainer`). A text-like node is either text or interpolation.
 
@@ -203,7 +203,7 @@ We add the content of the text node to the `template` property of the context an
 
 The implementation is here.
 
-[https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transforms/transformElement.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts)
+[packages/compiler-vapor/src/transforms/transformElement.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts)
 
 First of all, this transform operates entirely within the `onExit` lifecycle.\
 Note that it returns a function.
@@ -244,7 +244,7 @@ Now let's look at where `childrenTemplate` is actually created.
 
 The implementation is here.
 
-[https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/transforms/transformChildren.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts)
+[packages/compiler-vapor/src/transforms/transformChildren.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts)
 
 What it does is simple: it sequentially executes `transformNode` on each of the `children` of the incoming `node`.
 

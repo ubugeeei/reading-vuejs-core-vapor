@@ -13,7 +13,7 @@ We'll first look at the `IR` before proceeding to read the source code of the `t
 While the `SFCDescriptor` and `AST` were essentially structured versions of the user's (web application developer's) input code, the `IR` can be thought of as the "structured version of the output code." \
 The definition of `IR` can be found in `ir/index.ts`.
 
-[https://github.com/vuejs/core-vapor/packages/compiler-vapor/src/ir/index.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts)
+[packages/compiler-vapor/src/ir/index.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts)
 
 Recall the compiler output of the small component we read at the beginning:
 

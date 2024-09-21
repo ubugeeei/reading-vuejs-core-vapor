@@ -87,7 +87,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 さて，トーカナイザの実装があらかた理解できてので次は `parse` です．\
 こちらは `parser.ts` に実装があります．
 
-[https://github.com/vuejs/core-vapor/packages/compiler-core/src/parser.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts)
+[packages/compiler-core/src/parser.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts)
 
 ここで先ほどの `Tokenizer` が利用されています
 

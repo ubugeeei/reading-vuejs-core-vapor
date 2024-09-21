@@ -90,7 +90,7 @@ Now that we have a general understanding of the tokenizer's implementation, let'
 
 This is implemented in `parser.ts`.
 
-[https://github.com/vuejs/core-vapor/packages/compiler-core/src/parser.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts)
+[packages/compiler-core/src/parser.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts)
 
 Here, the `Tokenizer` we just discussed is used:
 

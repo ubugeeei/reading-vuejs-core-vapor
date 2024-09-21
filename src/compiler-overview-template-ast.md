@@ -14,7 +14,7 @@ Information such as directives, mustaches, slots, etc., are represented as ASTs 
 
 The implementation is in `ast.ts` of `compiler-core`.
 
-[https://github.com/vuejs/core-vapor/packages/compiler-core/src/ast.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts)
+[packages/compiler-core/src/ast.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts)
 
 Let's read through the overall structure.
 
