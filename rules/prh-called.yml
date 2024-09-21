@@ -1,0 +1,9 @@
+version: 1
+
+rules:
+  - expected: という
+    pattern:
+      - と言う
+  - expected: どういう
+    pattern:
+      - どう言う
