@@ -23,33 +23,36 @@ export default (): UserConfig<DefaultTheme.Config> => ({
       },
       {
         text: "Overview of the Compiler",
-        link: "/compiler-overview"
+        link: "/compiler-overview",
       },
       {
         text: "Overview of the SFC Parser",
-        link: "/compiler-overview-sfc"
+        link: "/compiler-overview-sfc",
       },
       {
         text: "Overview of the Template AST",
-        link: "/compiler-overview-template-ast"
+        link: "/compiler-overview-template-ast",
       },
       {
         text: "Overview of the Template Parser",
-        link: "/compiler-overview-template-parser"
+        link: "/compiler-overview-template-parser",
       },
       {
         text: "Overview of the Vapor IR",
-        link: "/compiler-overview-ir"
+        link: "/compiler-overview-ir",
       },
       {
         text: "Overview of the Transformer",
-        link: "/compiler-overview-transformer"
+        link: "/compiler-overview-transformer",
+      },
+      {
+        text: "Overview of the Transformer 2",
+        link: "/compiler-overview-transformer2",
       },
       {
         text: "Overview of the Codegen",
-        link: "/compiler-overview-codegen"
-      }
-      
+        link: "/compiler-overview-codegen",
+      },
     ],
   },
 });
