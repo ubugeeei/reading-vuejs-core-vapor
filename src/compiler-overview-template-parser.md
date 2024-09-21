@@ -10,6 +10,8 @@ We start with `tokenize`.
 
 ## Tokenize
 
+<div v-pre>
+
 `tokenize` is the lexical analysis step.
 
 Lexical analysis is the process of analyzing code, which is just a string, into units called tokens (lexemes).
@@ -102,7 +104,7 @@ Please focus on the `oninterpolation` callback.
 
 As the name suggests, this is processing related to the `Interpolation` Node.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L108C3-L108C18
+https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L108-L108
 
 Using the length of the delimiters (default is `{{` and `}}`) and the passed indices, it calculates the indices of the inner content of the `Interpolation`.
 
@@ -137,3 +139,5 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 In this way, by making full use of the `Tokenizer` callbacks, the AST is constructed.
 
 Although the amount of implementation is large, we're essentially just steadily doing these processes.
+
+</div>
