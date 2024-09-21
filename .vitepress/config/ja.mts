@@ -21,6 +21,38 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "どう読み進める？",
         link: "/ja/how-read",
       },
+      {
+        text: "単純なコンポーネントを読む",
+        link: "/ja/read-simplest-component",
+      },
+      {
+        text: "コンパイラの概要",
+        link: "/ja/compiler-overview",
+      },
+      {
+        text: "SFC Parser の概要",
+        link: "/ja/compiler-overview-sfc",
+      },
+      {
+        text: "Template AST の概要",
+        link: "/ja/compiler-overview-template-ast",
+      },
+      {
+        text: "Template Parser の概要",
+        link: "/ja/compiler-overview-template-parser",
+      },
+      {
+        text: "Vapor IR の概要",
+        link: "/ja/compiler-overview-ir",
+      },
+      {
+        text: "Transformer の概要",
+        link: "/ja/compiler-overview-transformer",
+      },
+      {
+        text: "Codegen の概要",
+        link: "/ja/compiler-overview-codegen",
+      },
     ],
   },
 });
