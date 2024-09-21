@@ -50,6 +50,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/ja/compiler-overview-transformer",
       },
       {
+        text: "Transformer の概要 2",
+        link: "/ja/compiler-overview-transformer2",
+      },
+      {
         text: "Codegen の概要",
         link: "/ja/compiler-overview-codegen",
       },
