@@ -160,7 +160,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 という記載があります．
 
-`DynamicFlag.REFERENCED` が 設定されるタイミングは 2 箇所です．
+`DynamicFlag.REFERENCED` が設定されるタイミングは 2 箇所です．
 
 1. `context.reference` が呼ばれた時．
 
