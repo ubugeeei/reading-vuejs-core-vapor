@@ -48,7 +48,7 @@ const count = ref(0);
 
 Then you get an `SFCDescriptor` like the following. \
 You don't need to read the `ast` in detail now. We will explain it later. \
-*Note: Some parts are omitted.*
+_Note: Some parts are omitted._
 
 ```json
 {
@@ -143,8 +143,6 @@ You don't need to read the `ast` in detail now. We will explain it later. \
   "styles": []
 }
 ```
-
-We get an `SFCDescriptor` like this.
 
 ## Implementation of the Parser
 
