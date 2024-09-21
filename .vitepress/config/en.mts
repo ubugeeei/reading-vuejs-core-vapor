@@ -21,6 +21,35 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "How to Proceed?",
         link: "/how-read",
       },
+      {
+        text: "Overview of the Compiler",
+        link: "/compiler-overview"
+      },
+      {
+        text: "Overview of the SFC Parser",
+        link: "/compiler-overview-sfc"
+      },
+      {
+        text: "Overview of the Template AST",
+        link: "/compiler-overview-template-ast"
+      },
+      {
+        text: "Overview of the Template Parser",
+        link: "/compiler-overview-template-parser"
+      },
+      {
+        text: "Overview of the Vapor IR",
+        link: "/compiler-overview-ir"
+      },
+      {
+        text: "Overview of the Transformer",
+        link: "/compiler-overview-transformer"
+      },
+      {
+        text: "Overview of the Codegen",
+        link: "/compiler-overview-codegen"
+      }
+      
     ],
   },
 });
