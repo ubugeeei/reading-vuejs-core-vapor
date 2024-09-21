@@ -56,7 +56,7 @@ Vapor Mode のコンパイラの実装は概ね `/packages/compiler-vapor` に�
 そして得られた AST を元に，**generator** がコード (文字列) を生成します．\
 正確には，得られた AST を任意の形に変換(翻訳)して，それを再度文字列として出力します．
 
-この，「コード (input) 解析 -> 操作 -> コード (output) 生成」という点順は Vue.js で同じです．
+この，「コード (input) 解析 -> 操作 -> コード (output) 生成」という手順は Vue.js で同じです．
 
 ## Vapor Mode のコンパイラの設計
 
