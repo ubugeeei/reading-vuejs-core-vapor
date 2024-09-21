@@ -168,7 +168,7 @@ compiler.parse の compiler は options からきているもので，これは�
 
 template も SFC も構文としてはほぼ HTML です．\
 Vue.js の HTML っぽいものを解析するときは基本 `compiler-core` のパーサーを使います．\
-若干際はあるので，引数の `parseMode` に `'sfc'` を渡してるのもわかると思います．
+若干の差異はあるので，引数の `parseMode` に `'sfc'` を渡してるのもわかると思います．
 
 まぁ，つまるところ，`compiler-core` は template 専用のパーサを実装しているというよりももっと汎用的な立ち位置で，compiler-sfc のパーサーはそれのラッパーであるということです．
 
