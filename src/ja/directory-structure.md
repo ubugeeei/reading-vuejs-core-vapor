@@ -38,7 +38,7 @@ core-vapor では新たに `compiler-vapor` と `runtime-vapor` が追加され�
 ---
 
 そして，Vue.js のエントリとなるパッケージは `/packages/vue` に配置されています．\
-`core-vapor` においては，これに加え，`/packages/vue-vapor` と言う Vapor Mode のエントリとなるパッケージが追加されています．
+`core-vapor` においては，これに加え，`/packages/vue-vapor` という Vapor Mode のエントリとなるパッケージが追加されています．
 
 - [https://github.com/vuejs/core-vapor/packages/vue](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue)
 - [https://github.com/vuejs/core-vapor/packages/vue-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor)

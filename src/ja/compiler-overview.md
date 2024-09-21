@@ -82,11 +82,11 @@ Vapor Mode のコンパイラの実装は概ね `/packages/compiler-vapor` に�
 ざっくり，「出力コードを表したオブジェクト」と思ってもらえれば問題ないです．\
 こちらも具体的なソースコードはまた後で紹介します．
 
-そして，Vue.js のコンパイラの重要な概念として，`transformer` と言うものがあります．\
+そして，Vue.js のコンパイラの重要な概念として，`transformer` というものがあります．\
 これは AST を操作して AST をトランスフォーム (変換) するための実装で，Vapor Mode では主にこの transformer によって AST を IR に変換します．\
 そして，`IR` を元にコードを生成します．
 
-(transformer と言う概念自体は実は Vapor 固有のもではなく，`compiler-core` にも実装されていますが，Vapor Mode ではこれは使わずに `compiler-vapor` に実装された transformer を使用します．)
+(transformer という概念自体は実は Vapor 固有のもではなく，`compiler-core` にも実装されていますが，Vapor Mode ではこれは使わずに `compiler-vapor` に実装された transformer を使用します．)
 
 少しややこしいですが，ここまでの流れを改めて図に起こすと以下のようになります．
 

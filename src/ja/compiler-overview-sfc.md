@@ -13,20 +13,20 @@ filename や template の情報, script の情報, style の情報などが含�
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L76-L102
 
-template や script, style はそれぞれ `SFCBlock` と言うオブジェクトを継承しており，この `SFCBlock` はその内容を表す `content` や，lang, setup, scoped などを表す `attrs`，SFC 全体のどの位置にあるか示す　`loc` の情報などを持っています．
+template や script, style はそれぞれ `SFCBlock` というオブジェクトを継承しており，この `SFCBlock` はその内容を表す `content` や，lang, setup, scoped などを表す `attrs`，SFC 全体のどの位置にあるか示す　`loc` の情報などを持っています．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L39-L47
 
-`template` は `SFCTemplateBlock` と言うオブジェクトで表現されており，ここに先ほど説明した AST を持っています．
+`template` は `SFCTemplateBlock` というオブジェクトで表現されており，ここに先ほど説明した AST を持っています．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L49-L52
 
-script も同様に `SFCScriptBlock` と言うオブジェクトで表現されています．\
+script も同様に `SFCScriptBlock` というオブジェクトで表現されています．\
 ここには setup であるかどうかのフラグや，import しているモジュールの情報，ブロックの中身であるスクリプト (JS, TS) の AST などが含まれています．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L54-L68
 
-style も同様に `SFCStyleBlock` と言うオブジェクトで表現されています．
+style も同様に `SFCStyleBlock` というオブジェクトで表現されています．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L70-L74
 

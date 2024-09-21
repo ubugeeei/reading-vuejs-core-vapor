@@ -27,14 +27,14 @@ Vapor Mode は Vue.js の次世代実装です．
 
 ## ソースコードリーディングの対象
 
-Vue.js の公式チームが提供するものは [`vuejs`](https://github.com/vuejs) と言う GitHub organization にあります．\
+Vue.js の公式チームが提供するものは [`vuejs`](https://github.com/vuejs) という GitHub organization にあります．\
 リポジトリがたくさんありますが，その中でも [`vuejs/core-vapor`](https://github.com/vuejs/core-vapor) が Vapor Mode の実装です．
 
-そして，この [`vuejs/core-vapor`](https://github.com/vuejs/core-vapor) と言うリポジトリは [`vuejs/core`](https://github.com/vuejs/core) のフォークです．\
+そして，この [`vuejs/core-vapor`](https://github.com/vuejs/core-vapor) というリポジトリは [`vuejs/core`](https://github.com/vuejs/core) のフォークです．\
 おそらく皆さんが普段使っているであろういわゆる「Vue.js」はこの [`vuejs/core`](https://github.com/vuejs/core) です．\
 Vapor Mode は現在 (2024/9 時点) はまだ R&D (研究開発) の段階であるため，[`vuejs/core`](https://github.com/vuejs/core) にはまだマージされていません．
 
-また，さらにややこしいことに，[`vuejs/core`](https://github.com/vuejs/core) は Vue.js v3 以降の実装であり．v2 以前の実装は [`vuejs/vue`](https://github.com/vuejs/vue) と言うまた別のリポジトリにあります．\
+また，さらにややこしいことに，[`vuejs/core`](https://github.com/vuejs/core) は Vue.js v3 以降の実装であり．v2 以前の実装は [`vuejs/vue`](https://github.com/vuejs/vue) というまた別のリポジトリにあります．\
 (よく `vuejs/core` はスターが少ないと突っ込まれるのですが，これは v3 に移行したタイミングでリポジトリを移したからです．)
 
 今回は，Vapor Mode の実装を読み進めるので，[`vuejs/core-vapor`](https://github.com/vuejs/core-vapor) を主に読んでいくことになります！

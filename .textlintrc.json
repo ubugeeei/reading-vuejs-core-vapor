@@ -6,7 +6,10 @@
       }
     },
     "prh": {
-      "rulePaths" :["rules/prh-punctuation-mark.yml"]
+      "rulePaths": [
+        "rules/prh-punctuation-mark.yml",
+        "rules/prh-called.yml"
+      ]
     }
   }
 }
