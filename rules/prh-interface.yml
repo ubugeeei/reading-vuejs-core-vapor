@@ -1,0 +1,6 @@
+version: 1
+
+rules:
+  - expected: インターフェイス
+    pattern:
+      - インターフェース
