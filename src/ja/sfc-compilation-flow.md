@@ -190,7 +190,7 @@ function _sfc_render(_ctx) {
 }
 ```
 
-の部分は `compileTemplate` というかんすによって生成されます．
+の部分は `compileTemplate` という関数によって生成されます．
 
 ```js
 const _sfc_main = {};
