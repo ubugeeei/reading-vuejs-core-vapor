@@ -65,6 +65,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "Start Reading the Runtime",
         link: "/start-to-read-runtime",
       },
+      {
+        text: "Mustache and Binding",
+        link: "/mustache-and-state-binding",
+      },
     ],
   },
 });

@@ -69,6 +69,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "ランタイムを読み始める",
         link: "/ja/start-to-read-runtime",
       },
+      {
+        text: "マスタッシュとバインド",
+        link: "/ja/mustache-and-state-binding",
+      },
     ],
   },
 });
