@@ -57,6 +57,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "What's Next?",
         link: "/what-next",
       },
+      {
+        text: "Flow of SFC Compilation",
+        link: "/sfc-compilation-flow",
+      },
     ],
   },
 });
