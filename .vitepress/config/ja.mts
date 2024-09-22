@@ -61,6 +61,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "次は何？",
         link: "/ja/what-next",
       },
+      {
+        text: "SFC のコンパイルの流れ",
+        link: "/ja/sfc-compilation-flow",
+      },
     ],
   },
 });
