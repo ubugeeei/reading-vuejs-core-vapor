@@ -61,6 +61,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "Flow of SFC Compilation",
         link: "/sfc-compilation-flow",
       },
+      {
+        text: "Start Reading the Runtime",
+        link: "/start-to-read-runtime",
+      },
     ],
   },
 });

@@ -65,6 +65,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "SFC のコンパイルの流れ",
         link: "/ja/sfc-compilation-flow",
       },
+      {
+        text: "ランタイムを読み始める",
+        link: "/ja/start-to-read-runtime",
+      },
     ],
   },
 });
