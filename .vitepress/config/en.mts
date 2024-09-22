@@ -53,6 +53,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "Overview of the Codegen",
         link: "/compiler-overview-codegen",
       },
+      {
+        text: "What's Next?",
+        link: "/what-next",
+      },
     ],
   },
 });
