@@ -73,6 +73,58 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "マスタッシュとバインド",
         link: "/ja/mustache-and-state-binding",
       },
+      {
+        text: "🚧 スケジューラ",
+        link: "/ja/scheduler",
+      },
+      {
+        text: "🚧 v-on",
+        link: "/ja/v-on",
+      },
+      {
+        text: "🚧 v-bind",
+        link: "/ja/v-bind",
+      },
+      {
+        text: "🚧 v-model",
+        link: "/ja/v-model",
+      },
+      {
+        text: "🚧 v-show",
+        link: "/ja/v-show",
+      },
+      {
+        text: "🚧 v-once",
+        link: "/ja/v-once",
+      },
+      {
+        text: "🚧 v-text",
+        link: "/ja/v-text",
+      },
+      {
+        text: "🚧 v-html",
+        link: "/ja/v-html",
+      },
+      {
+        text: "🚧 v-if",
+        link: "/ja/v-if",
+      },
+      {
+        text: "🚧 v-for",
+        link: "/ja/v-for",
+      },
+      {
+        text: "🚧 Template Refs",
+        link: "/ja/template-refs",
+      },
+      {
+        text: "🚧 コンポーネント",
+        link: "/ja/component",
+      },
+      {
+        text: "🚧 v-slot",
+        link: "/ja/v-slot",
+      },
     ],
   },
 });
