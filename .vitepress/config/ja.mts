@@ -57,6 +57,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         text: "Codegen の概要",
         link: "/ja/compiler-overview-codegen",
       },
+      {
+        text: "次は何？",
+        link: "/ja/what-next",
+      },
     ],
   },
 });
