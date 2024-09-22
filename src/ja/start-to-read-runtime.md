@@ -191,7 +191,7 @@ Vapor Mode の真髄と言ってもいいでしょう．
 Vapor Mode には VNode や patch といったものはないので，最初の setup 処理が全てです．\
 それ以降の更新はリアクティビティシステムによって直接 DOM (Block) に対して操作が行われます．
 
-今はまだ state を持っていないので，単純に render 関すから得た Block がどのように扱われているかを見ていきましょう．
+今はまだ state を持っていないので，単純に render 関数から得た Block がどのように扱われているかを見ていきましょう．
 
 この関数は [packages/runtime-vapor/src/apiRender.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts) という，レンダリング周りの処理が実装されたファイルにあります．
 
@@ -231,7 +231,7 @@ Node (もしくは fragment, component) だった場合は block という変数
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L65-L74
 
-このあと，まだ block とい変数に何も入っていない場合は render 関数から block の取得を試みます．\
+このあと，まだ block という変数に何も入っていない場合は render 関数から block の取得を試みます．\
 今回のコンポーネントはこの分岐に入って，render 関数が実行され block が保持されます．(`n0`)
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L78-L87
@@ -306,7 +306,7 @@ export default Object.assign(_sfc_main, {
 });
 ```
 
-のようなコードがどのように動作するかを見てきましたが，ただ component のインスタンスを用意して，(あれば) setup 関数を実行して，render 関数によって得られた Block を `app.mount(selector)` して，selector に block を insert するだけです．
+のようなコードがどのように動作するかを見てきましたが，ただ component のインスタンスを用意して，(あれば) setup 関数を実行して，render 関数によって得られた `Block` を `app.mount(selector)` して得られた `container` に `insert` するだけです．
 
 とてもシンプルだということがわかりました．
 
