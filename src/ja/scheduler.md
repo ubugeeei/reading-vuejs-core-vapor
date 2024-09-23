@@ -39,7 +39,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 ここでは実際にキューされた job と，現在実行中の index を管理しています．
 
-`job` は実際の 実行対象です．
+`job` は実際の実行対象です．
 Function に `id` と `flag` (後述) を生やしたものです．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/reactivity/src/scheduler.ts#L23-L30
@@ -287,7 +287,7 @@ renderEffect(effect);
 ```
 
 こうすると，`count` に `effect` (をラップした `job`) が track され，count が変更された際にその `job` を `trigger` します．\
-`trigger` じには内部で設定された `scheduler` プロパティの方が実行されますが，今回は 「`job` の実行」ではなく，あくまで「`job` を `queue` に追加する」が設定されているため，即時には実行されずにスケジューラに渡されます．
+`trigger` じには内部で設定された `scheduler` プロパティの方が実行されますが，今回は「`job` の実行」ではなく，あくまで「`job` を `queue` に追加する」が設定されているため，即時には実行されずにスケジューラに渡されます．
 
 ここで，このような trigger を考えてみましょう．
 
