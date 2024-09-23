@@ -210,11 +210,11 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/directives.ts#L134-L141
 
-`source` を `ReactiveEffect` でラップし，その `effect` の　`scheduler` には update trigger を仕込みます．
+`source` を `ReactiveEffect` でラップし，その `effect` の `scheduler` には update trigger を仕込みます．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/directives.ts#L143-L164
 
-update trigger は単純にライフサイクルの　`beforeUpdate`, `updated` を実行するトリガです．
+update trigger は単純にライフサイクルの `beforeUpdate`, `updated` を実行するトリガです．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/directives.ts#L228-L266
 
