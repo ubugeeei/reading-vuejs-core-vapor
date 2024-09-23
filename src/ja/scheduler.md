@@ -29,7 +29,7 @@ https://github.com/vuejs/core/blob/a177092754642af2f98c33a4feffe8f198c3c950/pack
 
 スケジューラの実装は [packages/runtime-vapor/src/scheduler.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/scheduler.ts) にあります．
 
-まず，基本的な構造として　`queue` と `job` があります．\
+まず，基本的な構造として `queue` と `job` があります．\
 そして，queue には 2 種類のもがあります．\
 `queue` と `pendingPostFlushCbs` です．
 
@@ -221,7 +221,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/reactivity/src/effect.ts#L142
 
 そして，`ReactiveEffect` を実行するためのメソッドは 2 つあります.\
-`run` と　`trigger` です．
+`run` と `trigger` です．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/reactivity/src/effect.ts#L182
 
@@ -306,7 +306,7 @@ count.value = 2; // enqueue job
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/scheduler.ts#L37
 
 すでにその job が追加されている場合は無視されるようになっています．\
-この関数の最後に `queueFlush` を実行しているので，毎回空っぽになりそうな気はしますが，実はこれは Promise で繋がっているため，この時点ではまだ　`flush` されておらず，`queue` には `job` が残っている状態になります．
+この関数の最後に `queueFlush` を実行しているので，毎回空っぽになりそうな気はしますが，実はこれは Promise で繋がっているため，この時点ではまだ `flush` されておらず，`queue` には `job` が残っている状態になります．
 
 これにより，イベントループを媒介した job の重複排除を実現し，不要な実行を抑制することができます．\
 実際に，考えてみて欲しいのですが，
@@ -325,4 +325,4 @@ setText(n0, 2);
 だけの実行で問題ないはずです．
 
 これであらかたスケジューラの理解はできたはずです．\
-余計な作用の実行を制御するために Promise と　`queue` を活用し，ライフサイクルフックの実行で画面の更新などを待った後で実行するのが正しいものは　`pendingPostFlushCbs` という別のキューを用意し，実行タイミングを制御しています．
+余計な作用の実行を制御するために Promise と `queue` を活用し，ライフサイクルフックの実行で画面の更新などを待った後で実行するのが正しいものは `pendingPostFlushCbs` という別のキューを用意し，実行タイミングを制御しています．

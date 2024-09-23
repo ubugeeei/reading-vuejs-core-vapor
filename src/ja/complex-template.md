@@ -576,7 +576,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 ## Codegen を読む
 
-`IR` さえできれば　 codegen は何も難しくないのでさらっとみていきます．
+`IR` さえできれば  codegen は何も難しくないのでさらっとみていきます．
 
 新規の部分は主に `IRCreateTextNode` と `IRPrependNode` です．
 

@@ -97,7 +97,7 @@ import App from "./App.vue";
 createApp(App).mount("#app");
 ```
 
-Vapor Mode でも同様です． `createApp` の代わりに　`createVaporApp` を使います．
+Vapor Mode でも同様です． `createApp` の代わりに `createVaporApp` を使います．
 
 ```ts
 import { createVaporApp } from "vue/vapor";
@@ -256,7 +256,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L12-L15
 
-`setupComponent` と同じく，[packages/runtime-vapor/src/apiRender.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts)　に実装されています．
+`setupComponent` と同じく，[packages/runtime-vapor/src/apiRender.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts) に実装されています．
 
 やっていることは非常にシンプルで，component のマウントと，キュー(スケジューラ)にあるタスクを実行するだけです．\
 (※ スケジューラについては今は気にする必要はないです)
@@ -283,7 +283,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/element.ts#L23-L29
 
-最後に　mounted hook を実行したら component の mount はおしまいです．
+最後に mounted hook を実行したら component の mount はおしまいです．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L135-L142
 
