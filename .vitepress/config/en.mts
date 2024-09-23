@@ -70,6 +70,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/mustache-and-state-binding",
       },
       {
+        text: "Complex Templates",
+        link: "/complex-template",
+      },
+      {
         text: "Scheduler",
         link: "/scheduler",
       },
