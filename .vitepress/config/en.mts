@@ -70,56 +70,56 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/mustache-and-state-binding",
       },
       {
-        text: "🚧 Scheduler",
-        link: "/ja/scheduler",
+        text: "Scheduler",
+        link: "/scheduler",
       },
       {
         text: "🚧 v-on",
-        link: "/ja/v-on",
+        link: "/v-on",
       },
       {
         text: "🚧 v-bind",
-        link: "/ja/v-bind",
+        link: "/v-bind",
       },
       {
         text: "🚧 v-model",
-        link: "/ja/v-model",
+        link: "/v-model",
       },
       {
         text: "🚧 v-show",
-        link: "/ja/v-show",
+        link: "/v-show",
       },
       {
         text: "🚧 v-once",
-        link: "/ja/v-once",
+        link: "/v-once",
       },
       {
         text: "🚧 v-text",
-        link: "/ja/v-text",
+        link: "/v-text",
       },
       {
         text: "🚧 v-html",
-        link: "/ja/v-html",
+        link: "/v-html",
       },
       {
         text: "🚧 v-if",
-        link: "/ja/v-if",
+        link: "/v-if",
       },
       {
         text: "🚧 v-for",
-        link: "/ja/v-for",
+        link: "/v-for",
       },
       {
         text: "🚧 Template Refs",
-        link: "/ja/template-refs",
+        link: "/template-refs",
       },
       {
         text: "🚧 Component",
-        link: "/ja/component",
+        link: "/component",
       },
       {
         text: "🚧 v-slot",
-        link: "/ja/v-slot",
+        link: "/v-slot",
       },
     ],
   },
