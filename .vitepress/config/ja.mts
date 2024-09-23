@@ -74,7 +74,7 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/ja/mustache-and-state-binding",
       },
       {
-        text: "🚧 スケジューラ",
+        text: "スケジューラ",
         link: "/ja/scheduler",
       },
       {
