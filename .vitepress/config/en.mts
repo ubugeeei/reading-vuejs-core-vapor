@@ -78,7 +78,7 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/scheduler",
       },
       {
-        text: "🚧 v-on",
+        text: "v-on",
         link: "/v-on",
       },
       {

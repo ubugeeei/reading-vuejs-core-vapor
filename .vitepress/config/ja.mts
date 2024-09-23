@@ -82,7 +82,7 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/ja/complex-template",
       },
       {
-        text: "🚧 v-on",
+        text: "v-on",
         link: "/ja/v-on",
       },
       {
