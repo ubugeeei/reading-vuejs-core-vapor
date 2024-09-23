@@ -106,7 +106,7 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/ja/v-text",
       },
       {
-        text: "🚧 v-html",
+        text: "v-html",
         link: "/ja/v-html",
       },
       {
