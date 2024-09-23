@@ -238,7 +238,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 `childrenTemplate` がどこで作られているかというと，`transformChildren` です．
 
-transform の実行順的には, `transformText` -> `transformElement` -> `transformChildren` なのですが，今見た `transformElement` の処理は `onExit` で実行され，先に　`transformChildren` が実行される事になるため，すでに `childrenTemplate` は生成されています．
+transform の実行順的には, `transformText` -> `transformElement` -> `transformChildren` なのですが，今見た `transformElement` の処理は `onExit` で実行され，先に `transformChildren` が実行される事になるため，すでに `childrenTemplate` は生成されています．
 
 それでは実際に `childrenTemplate` を作っているところを見てみましょう.
 

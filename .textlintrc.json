@@ -9,7 +9,8 @@
       "rulePaths": [
         "rules/prh-punctuation-mark.yml",
         "rules/prh-called.yml",
-        "rules/prh-interface.yml"
+        "rules/prh-interface.yml",
+        "rules/prh-full-space.yml"
       ]
     }
   }

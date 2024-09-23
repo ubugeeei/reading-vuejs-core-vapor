@@ -151,7 +151,7 @@ function _sfc_render(_ctx) {
 
 <div v-pre>
 
-まず，template としては　`<p>{{ count }}</p>` と書いた部分が `<p></p>` に変換されています．\
+まず，template としては `<p>{{ count }}</p>` と書いた部分が `<p></p>` に変換されています．\
 間の `{{ count }}` は `_renderEffect` と `_setText` によって `count` の値が更新されるたびに更新されるようになっています．
 
 </div>
@@ -166,7 +166,7 @@ Vue.js には `watchEffect` という API があります．
 https://vuejs.org/api/reactivity-core.html#watcheffect
 
 この関数は，引数に渡したたコールバック関数を初回に実行しつつ，そのコールバックをトラックする関数です．\
-つまり，初回実行以降，今回で言うと　`_ctx.count` というリアクティブな変数が更新されるたびに，コールバック関数が再実行されるというわけです．
+つまり，初回実行以降，今回で言うと `_ctx.count` というリアクティブな変数が更新されるたびに，コールバック関数が再実行されるというわけです．
 
 イメージ的には，
 
@@ -272,7 +272,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 (今回の場合，最終的な template は `"<p></p>"` になる)
 
 そうじゃない場合は `registerEffect` です．\
-`context.reference`　を実行し，この Node を変数に保持することをマークしつつ id を取得します．
+`context.reference` を実行し，この Node を変数に保持することをマークしつつ id を取得します．
 
 ## registerEffect
 
@@ -307,7 +307,7 @@ setText(n0, count);
 
 というようなコードの `IR` を表現することになります．
 
-`registerEffect`　の続きに戻ると，
+`registerEffect` の続きに戻ると，
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L151-L154
 
@@ -370,7 +370,7 @@ function _sfc_render(_ctx) {
 application のエントリで component のインスタンスが作られ，コンポーネントの `render` 関数が呼ばれてその結果の node が container に入っていくのは今までと同じです．\
 実際に `render` が実行された時に何が起こるかを見ていきましょう．
 
-まずは　`setText` です．\
+まずは `setText` です．\
 この辺りのオペレーションは概ね [packages/runtime-vapor/src/dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom) に実装されています．
 
 `setText` の実装は以下です．
