@@ -94,7 +94,7 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/v-show",
       },
       {
-        text: "🚧 v-once",
+        text: "v-once",
         link: "/v-once",
       },
       {
