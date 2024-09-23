@@ -68,7 +68,7 @@ In summary, it's an effect that sets the `_ctx.dynamicData` to the `data-dynamic
 
 ## Reading the Compiler
 
-Familiar route: `transformElement` -> `buildProps` -> `transformProps` -> `directiveTransform` -> `transformBind`.
+Familiar route: `transformElement` -> `buildProps` -> `transformProps` -> `directiveTransform` -> `transformVBind`.
 
 [packages/compiler-vapor/src/transforms/vBind.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vBind.ts)
 
