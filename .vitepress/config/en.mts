@@ -86,7 +86,7 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/v-bind",
       },
       {
-        text: "🚧 v-model",
+        text: "v-model",
         link: "/v-model",
       },
       {
