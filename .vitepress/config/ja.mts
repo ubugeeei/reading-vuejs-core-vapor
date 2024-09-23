@@ -78,6 +78,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/ja/scheduler",
       },
       {
+        text: "複雑なテンプレート",
+        link: "/ja/complex-template",
+      },
+      {
         text: "🚧 v-on",
         link: "/ja/v-on",
       },
