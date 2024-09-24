@@ -22,6 +22,10 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/how-read",
       },
       {
+        text: "Reading a Simple Component",
+        link: "/read-simplest-component",
+      },
+      {
         text: "Overview of the Compiler",
         link: "/compiler-overview",
       },
