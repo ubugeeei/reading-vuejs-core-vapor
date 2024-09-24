@@ -29,10 +29,10 @@ The compilation result looks like the following.
 
 ```js
 const _sfc_main = {
-vapor: true,
-**name: "App",
-setup(**props, { expose: **expose }) {
-**expose();
+  vapor: true,
+  name: "App",
+  setup(props, { expose: expose }) {
+    expose();
 
     const count = ref(0);
     function increment() {
@@ -45,16 +45,15 @@ setup(**props, { expose: **expose }) {
       value: true,
     });
     return __returned__;
-
-},
+  },
 };
 
 import {
-delegate as _delegate,
-renderEffect as _renderEffect,
-setText as _setText,
-delegateEvents as _delegateEvents,
-template as _template,
+  delegate as _delegate,
+  renderEffect as _renderEffect,
+  setText as _setText,
+  delegateEvents as _delegateEvents,
+  template as _template,
 } from "vue/vapor";
 
 const t0 = _template('<button type="button"></button>');
@@ -62,10 +61,10 @@ const t0 = _template('<button type="button"></button>');
 _delegateEvents("click");
 
 function _sfc_render(_ctx) {
-const n0 = t0();
-_delegate(n0, "click", () => _ctx.increment);
-_renderEffect(() => _setText(n0, _ctx.count));
-return n0;
+  const n0 = t0();
+  _delegate(n0, "click", () => _ctx.increment);
+  _renderEffect(() => _setText(n0, _ctx.count));
+  return n0;
 }
 ```
 
