@@ -3,6 +3,7 @@ import { previewGitHubSource } from "../plugins/markdown-it/github";
 
 export default (): UserConfig<DefaultTheme.Config> => ({
   srcDir: "src",
+  appearance: "force-dark",
   themeConfig: {
     i18nRouting: true,
     logo: "/logo.png",
