@@ -141,20 +141,20 @@ First, `queueJob`.
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/scheduler.ts#L35-L55
 
-It checks the `flags` of the `job` passed as an argument to determine whether it has already been added to the queue.\  
+It checks the `flags` of the `job` passed as an argument to determine whether it has already been added to the queue.\
 If it has, it ignores it.
 
-Then, if the `job` does not have an `id` set, it adds it to the queue unconditionally.\  
+Then, if the `job` does not have an `id` set, it adds it to the queue unconditionally.\
 Because it's impossible to control deduplication and the like (since it can't be identified).
 
-After that, if `flags` are not `PRE`, it adds it to the end; otherwise, it inserts it at the appropriate index.\  
+After that, if `flags` are not `PRE`, it adds it to the end; otherwise, it inserts it at the appropriate index.\
 That index is found based on `id` using `findInsertionIndex`.
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/scheduler.ts#L152-L176
 
 Since the queue is specified to maintain the order of increasing `id`, it uses binary search to quickly determine the position.
 
-Once that's done, it sets `flags` to `QUEUED` and finishes.\  
+Once that's done, it sets `flags` to `QUEUED` and finishes.\
 The key point here is that it finally calls `queueFlush()`.
 
 Next, let's look at `queueFlush`.
@@ -163,7 +163,7 @@ Next, let's look at `queueFlush`.
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/scheduler.ts#L74-L79
 
-`queueFlush` simply calls `resolvedPromise.then(flushJobs)`.\  
+`queueFlush` simply calls `resolvedPromise.then(flushJobs)`.\
 At this point, `flushJobs` is wrapped with `resolvedPromise.then`, and that Promise is set to `currentFlushPromise`.
 
 Let's take a look at `flushJobs`.
@@ -208,7 +208,7 @@ Now, there is one more aspect of the scheduler that we need to understand.
 
 This is the part.
 
-The `scheduler` option that the effect has is used to wrap the processing in the form of `queueJob`.\  
+The `scheduler` option that the effect has is used to wrap the processing in the form of `queueJob`.\
 So, what exactly is this `effect.scheduler`?
 
 `effect` is an instance of `ReactiveEffect`.
@@ -264,10 +264,10 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 if it has a `scheduler`, it is given priority to execute.
 
-This mechanism ensures that unnecessary executions do not occur when reactive effects are triggered based on certain dependencies.\  
+This mechanism ensures that unnecessary executions do not occur when reactive effects are triggered based on certain dependencies.\
 The `scheduler` property allows you to appropriately set up the processing to be queued by the scheduler, optimizing the execution of effects.
 
-For example, let's look at the implementation of `renderEffect`.\  
+For example, let's look at the implementation of `renderEffect`.\
 It sets `() => queueJob(job)` as the `scheduler`.
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L37-L41
@@ -283,7 +283,7 @@ const effect = () => setText(n0, count.value);
 renderEffect(effect);
 ```
 
-This way, the `effect` (a job that wraps `effect`) is tracked by `count`, and when `count` changes, it triggers that job.\  
+This way, the `effect` (a job that wraps `effect`) is tracked by `count`, and when `count` changes, it triggers that job.\
 When `trigger` is called, the `scheduler` property set internally is executed, but in this case, it is set to "add the job to the queue" rather than "execute the job", so it is not executed immediately but passed to the scheduler.
 
 Now, let's consider such a trigger.
@@ -297,15 +297,15 @@ count.value = 1; // enqueue job
 count.value = 2; // enqueue job
 ```
 
-Doing so will execute `() => queueJob(job)` twice.\  
+Doing so will execute `() => queueJob(job)` twice.\
 And recalling the implementation of `queueJob`,
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/scheduler.ts#L37
 
-if the job is already added, it will be ignored.\  
+if the job is already added, it will be ignored.\
 Since this function executes `queueFlush` at the end, you might think the queue would be emptied each time, but actually, because it is connected via a Promise, the `flush` has not yet occurred at this point, and the `job` remains in the queue.
 
-This achieves deduplication of jobs mediated by the event loop, preventing unnecessary executions.\  
+This achieves deduplication of jobs mediated by the event loop, preventing unnecessary executions.\
 In fact, consider the following:
 
 ```ts
@@ -321,5 +321,5 @@ setText(n0, 2);
 
 should be executed, which is fine.
 
-With this, you should have a general understanding of the scheduler.\  
+With this, you should have a general understanding of the scheduler.\
 To control the execution of unnecessary effects, Promises and the `queue` are utilized, and to properly execute after waiting for updates to the screen and other actions through lifecycle hooks, a separate queue called `pendingPostFlushCbs` is prepared to control the execution timing.

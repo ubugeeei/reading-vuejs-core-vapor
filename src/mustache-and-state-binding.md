@@ -360,10 +360,10 @@ function _sfc_render(_ctx) {
 }
 ```
 
-In the application entry, a component instance is created, and the component's `render` function is called to place the resulting node into the container, which is the same as before.\  
+In the application entry, a component instance is created, and the component's `render` function is called to place the resulting node into the container, which is the same as before.\
 Let's see what actually happens when `render` is executed.
 
-First, `setText`.\  
+First, `setText`.\
 These operations are mostly implemented in [packages/runtime-vapor/src/dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom).
 
 The implementation of `setText` is as follows:
@@ -372,7 +372,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 It really does only very simple things. It's just a DOM operation. It `joins` the `values` and assigns them to the `textContent` of `el`.
 
-Next, let's look at the implementation of `renderEffect` to conclude this page.\  
+Next, let's look at the implementation of `renderEffect` to conclude this page.\
 In other words, `renderEffect` is a "watchEffect with an update hook execution".
 
 The implementation is in [packages/runtime-vapor/src/renderEffect.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts).
@@ -405,8 +405,8 @@ Then, it executes the `effect`.
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L72
 
-Finally, it runs the lifecycle hook (updated).\  
-In reality, it just queues it in the scheduler.\  
+Finally, it runs the lifecycle hook (updated).\
+In reality, it just queues it in the scheduler.\
 (The scheduler appropriately handles deduplication and executes it at the proper time.)
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L74-L85
