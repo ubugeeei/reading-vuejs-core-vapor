@@ -73,11 +73,11 @@ As usual, the script part is not significant, so let's focus on the following pa
 
 ```js
 import {
-delegate as _delegate,
-renderEffect as _renderEffect,
-setText as _setText,
-delegateEvents as _delegateEvents,
-template as _template,
+  delegate as _delegate,
+  renderEffect as _renderEffect,
+  setText as _setText,
+  delegateEvents as _delegateEvents,
+  template as _template,
 } from "vue/vapor";
 
 const t0 = _template('<button type="button"></button>');
@@ -85,10 +85,10 @@ const t0 = _template('<button type="button"></button>');
 _delegateEvents("click");
 
 function _sfc_render(_ctx) {
-const n0 = t0();
-_delegate(n0, "click", () => _ctx.increment);
-_renderEffect(() => _setText(n0, _ctx.count));
-return n0;
+  const n0 = t0();
+  _delegate(n0, "click", () => _ctx.increment);
+  _renderEffect(() => _setText(n0, _ctx.count));
+  return n0;
 }
 ```
 
@@ -240,12 +240,6 @@ First, let's look at `delegateEvents` in the order of execution.
 
 The implementation is as follows.
 
-```js
-// Example
-
-e.composedPath(); // [button, div, body, html, document]
-```
-
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L83-L96
 
 As you can see from the comments, this concept seems to be borrowed from Solid.\
@@ -295,7 +289,7 @@ Let's also read `delegate` in this flow.
 
 ### delegate
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L58C17-L67
+https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L58-L67
 
 `delegate` creates a handler and registers it in the metadata with the delegate flag set.
 
