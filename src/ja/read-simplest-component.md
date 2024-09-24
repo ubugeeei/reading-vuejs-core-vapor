@@ -92,7 +92,7 @@ _sfc_main.render = _sfc_render;
 ```
 
 さて，ここまでは従来の Vue.js と大差ありません．
-ここからが Vapor の肝である，\_sfc_render の中身についてみていきましょう.
+ここからが Vapor の肝である，_sfc_render の中身についてみていきましょう.
 
 ```js
 import { template as _template } from "vue/vapor";

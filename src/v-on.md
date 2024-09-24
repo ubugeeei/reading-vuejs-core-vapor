@@ -28,7 +28,7 @@ This is a common counter component.
 The compilation result looks like the following.
 
 ```js
-const \_sfc_main = {
+const _sfc_main = {
 vapor: true,
 **name: "App",
 setup(**props, { expose: **expose }) {
@@ -50,21 +50,21 @@ setup(**props, { expose: **expose }) {
 };
 
 import {
-delegate as \_delegate,
-renderEffect as \_renderEffect,
-setText as \_setText,
-delegateEvents as \_delegateEvents,
-template as \_template,
+delegate as _delegate,
+renderEffect as _renderEffect,
+setText as _setText,
+delegateEvents as _delegateEvents,
+template as _template,
 } from "vue/vapor";
 
-const t0 = \_template('<button type="button"></button>');
+const t0 = _template('<button type="button"></button>');
 
-\_delegateEvents("click");
+_delegateEvents("click");
 
-function \_sfc_render(\_ctx) {
+function _sfc_render(_ctx) {
 const n0 = t0();
-\_delegate(n0, "click", () => \_ctx.increment);
-\_renderEffect(() => \_setText(n0, \_ctx.count));
+_delegate(n0, "click", () => _ctx.increment);
+_renderEffect(() => _setText(n0, _ctx.count));
 return n0;
 }
 ```
@@ -73,21 +73,21 @@ As usual, the script part is not significant, so let's focus on the following pa
 
 ```js
 import {
-delegate as \_delegate,
-renderEffect as \_renderEffect,
-setText as \_setText,
-delegateEvents as \_delegateEvents,
-template as \_template,
+delegate as _delegate,
+renderEffect as _renderEffect,
+setText as _setText,
+delegateEvents as _delegateEvents,
+template as _template,
 } from "vue/vapor";
 
-const t0 = \_template('<button type="button"></button>');
+const t0 = _template('<button type="button"></button>');
 
-\_delegateEvents("click");
+_delegateEvents("click");
 
-function \_sfc_render(\_ctx) {
+function _sfc_render(_ctx) {
 const n0 = t0();
-\_delegate(n0, "click", () => \_ctx.increment);
-\_renderEffect(() => \_setText(n0, \_ctx.count));
+_delegate(n0, "click", () => _ctx.increment);
+_renderEffect(() => _setText(n0, _ctx.count));
 return n0;
 }
 ```
@@ -98,13 +98,13 @@ The generation of the template and the `renderEffect` ~ `setText` are as usual.\
 This time, the main parts are
 
 ```js
-\_delegateEvents("click");
+_delegateEvents("click");
 ```
 
 and
 
 ```js
-\_delegate(n0, "click", () => \_ctx.increment);
+_delegate(n0, "click", () => _ctx.increment);
 ```
 
 As expected, the latter probably adds a `click` event to `n0`.\  
