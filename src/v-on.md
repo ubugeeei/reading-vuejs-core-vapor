@@ -1,7 +1,7 @@
 # v-on Directive
 
-Now, let's take a look at the `v-on` directive.\  
-There are two types of `v-on`: one for native elements and one for components. Since I don't know how to handle components yet, I will explain the one for native elements here.\  
+Now, let's take a look at the `v-on` directive.\
+There are two types of `v-on`: one for native elements and one for components. Since I don't know how to handle components yet, I will explain the one for native elements here.\
 (By the way, when it comes to components, it's mostly props, so there's not much to explain.)
 
 Let's consider a component like the following.
@@ -94,7 +94,7 @@ return n0;
 
 ## Understanding the Overview
 
-The generation of the template and the `renderEffect` ~ `setText` are as usual.\  
+The generation of the template and the `renderEffect` ~ `setText` are as usual.\
 This time, the main parts are
 
 ```js
@@ -107,17 +107,17 @@ and
 _delegate(n0, "click", () => _ctx.increment);
 ```
 
-As expected, the latter probably adds a `click` event to `n0`.\  
+As expected, the latter probably adds a `click` event to `n0`.\
 However, I don't understand what "delegate" means or what the former `_delegateEvents` is doing.
 
-For now, let's leave this as a mystery and look at the compiler's implementation.\  
+For now, let's leave this as a mystery and look at the compiler's implementation.\
 We will understand the mystery as we proceed to read the runtime.
 
 ## Reading the Compiler
 
 ### IR
 
-As usual, let's take a peek at the `IR`.\  
+As usual, let's take a peek at the `IR`.\
 There is something suspicious called `SET_EVENT`, but I don't see anything else.
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L22
@@ -130,15 +130,15 @@ It seems this Node has a `delegate` flag.
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L129
 
-Then, let's look for the transformer that generates this Node.\  
+Then, let's look for the transformer that generates this Node.\
 Found it. It is [packages/compiler-vapor/src/transforms/vOn.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts) .
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L73-L86
 
 ### DirectiveTransform
 
-Since it's the first time DirectiveTransform appears, let's see how it is called.\  
-DirectiveTransform is called from `transformElement`.\  
+Since it's the first time DirectiveTransform appears, let's see how it is called.\
+DirectiveTransform is called from `transformElement`.\
 Specifically, it is called during the processing of element attributes.
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L42
@@ -163,7 +163,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L301-L304
 
-In this case, it gets the v-on transformer from the name like `on`, and calls `transformVOn`.\  
+In this case, it gets the v-on transformer from the name like `on`, and calls `transformVOn`.\
 Then, in `transformVOn`, `context.registerEffect` is called at the end, registering the effect.
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L88
