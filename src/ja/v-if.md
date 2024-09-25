@@ -215,4 +215,16 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 これで transformVIf は終了です．
 
-Codegen もさらっと確認しましょう．
+Codegen もさらっと確認しましょう．\
+negative を持っている場合には再帰的に IfBranch を生成します．特に難しくないはずです．
+
+https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L33-L36
+
+https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L60-L61
+
+https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/if.ts#L7-L45
+
+
+## ランタイムを読む
+
+TBD
