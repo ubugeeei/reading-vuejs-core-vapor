@@ -193,7 +193,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 `Block` は Vapor Mode で扱う単位です．\
 非 Vapor で言うところの `VNode` (仮想 DOM の Node) に近いものです．
 
-`Block` の定義は `runtime-vapor` にあるので少しみてみまよう．
+`Block` の定義は `runtime-vapor` にあるので少しみてみましょう．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L26-L31
 
