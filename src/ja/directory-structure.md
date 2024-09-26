@@ -116,7 +116,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 これは名前の通り SFC (Single File Component) に関するコンパイラです．\
 具体的には，`<script setup>` や `<style scoped>` などの機能を提供します．
 
-多くの場合，このコンパイラは別パッケージになているバンドラ等のツールのプラグインに呼ばれることで機能します．\
+多くの場合，このコンパイラは別パッケージになっているバンドラ等のツールのプラグインに呼ばれることで機能します．\
 有名な例としては，[Vite](https://vitejs.dev/) で利用される [vite-plugin-vue](https://github.com/vitejs/vite-plugin-vue) や，[webpack](https://webpack.js.org/) で利用される [vue-loader](https://github.com/vuejs/vue-loader) などがあります．
 
 https://github.com/vitejs/vite-plugin-vue/blob/8d5a270408ff213648cda2a8db8f6cd63d709eb5/packages/plugin-vue/src/compiler.ts#L25-L31
