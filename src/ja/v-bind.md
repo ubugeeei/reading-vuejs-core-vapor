@@ -80,7 +80,7 @@ function _sfc_render(_ctx) {
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L236-L244
 
-その少し上あたりには `v-bind` のに `arg` がない場合 (e.g. `v-bind="obj"`) のハンドリングもあります．
+その少し上あたりには `v-bind` に `arg` がない場合 (e.g. `v-bind="obj"`) のハンドリングもあります．
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L208-L218
 

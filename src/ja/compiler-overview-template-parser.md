@@ -77,14 +77,14 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 このように，特定の状態下で文字を読み，その文字の種類によって状態を遷移させ次々と読み進めます．\
 基本的にはこれの繰り返しです．
 
-他の状態の他の文字の場合はあまりに実装が多いので割愛ます．
+他の状態の他の文字の場合はあまりに実装が多いので割愛します．
 (多いですが，やってることは一緒です．)
 
 </div>
 
 ## Parse
 
-さて，トーカナイザの実装があらかた理解できてので次は `parse` です．\
+さて，トーカナイザの実装があらかた理解できたので次は `parse` です．\
 こちらは `parser.ts` に実装があります．
 
 [packages/compiler-core/src/parser.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts)
@@ -126,7 +126,7 @@ stack というのは，element がネストしていくたびにその element 
 
 せっかくなのでその処理も見てみましょう．
 
-opentag (開始タグ) が終わったタイミング，例えば `<p>` だった場合は `>` のタイミンングで stack に現在の tag を `unshift` しています
+opentag (開始タグ) が終わったタイミング，例えば `<p>` だった場合は `>` のタイミングで stack に現在の tag を `unshift` しています
 
 https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L567-L586
 
