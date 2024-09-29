@@ -9,7 +9,7 @@ const flag = ref("");
 </script>
 
 <template>
-  <p v-show="text">Hello, v-show!</p>
+  <p v-show="flag">Hello, v-show!</p>
 </template>
 ```
 
@@ -45,13 +45,13 @@ const t0 = _template("<p>Hello, v-show!</p>");
 
 function _sfc_render(_ctx) {
   const n0 = t0();
-  _withDirectives(n0, [[_vShow, () => _ctx.text]]);
+  _withDirectives(n0, [[_vShow, () => _ctx.flag]]);
   return n0;
 }
 ```
 
-注目するべきは `_withDirectives(n0, [[_vShow, () => _ctx.text]]);` の部分です.\
-前回に引き続き `widthDirectives` 関数を使っていますが，今回は runtimeDirective として `vShow` 関数を使っています．
+注目するべきは `_withDirectives(n0, [[_vShow, () => _ctx.flag]]);` の部分です.\
+前回に引き続き `withDirectives` 関数を使っていますが，今回は runtimeDirective として `vShow` 関数を使っています．
 
 ## コンパイラを読む
 

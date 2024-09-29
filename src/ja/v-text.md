@@ -9,7 +9,7 @@ const message = ref("Hello, v-text!");
 </script>
 
 <template>
-  <p v-text="text" />
+  <p v-text="message" />
 </template>
 ```
 
@@ -45,7 +45,7 @@ const t0 = _template("<p></p>");
 
 function _sfc_render(_ctx) {
   const n0 = t0();
-  _renderEffect(() => _setText(n0, _ctx.text));
+  _renderEffect(() => _setText(n0, _ctx.message));
   return n0;
 }
 ```
