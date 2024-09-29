@@ -24,7 +24,7 @@ v3 のリポジトリは [pnpm workspace](https://pnpm.io/workspaces) によっ�
 
 core-vapor では新たに `compiler-vapor` と `runtime-vapor` が追加されています．
 
-- [packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/comiler-vapor)
+- [packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor)
 - [packages/runtime-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor)
 
 ---
@@ -90,7 +90,7 @@ const msg = ref("Hello, Vue!");
 
 ## compiler-dom
 
-Vue.js では，DOM の関する操作やコード生成を行うものは **環境依存である** という考えのもと，これらはコアから分離されています．\
+Vue.js では，DOM に関する操作やコード生成を行うものは **環境依存である** という考えのもと，これらはコアから分離されています．\
 これは後ほど runtime の方でも登場します．
 
 コンパイラに関して言えば，DOM イベントに関するコードを生成したり，特定の DOM 要素に関するコードを生成したりする実装が含まれます．\
@@ -116,7 +116,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 これは名前の通り SFC (Single File Component) に関するコンパイラです．\
 具体的には，`<script setup>` や `<style scoped>` などの機能を提供します．
 
-多くの場合，このコンパイラは別パッケージになているバンドラ等のツールのプラグインに呼ばれることで機能します．\
+多くの場合，このコンパイラは別パッケージになっているバンドラ等のツールのプラグインに呼ばれることで機能します．\
 有名な例としては，[Vite](https://vitejs.dev/) で利用される [vite-plugin-vue](https://github.com/vitejs/vite-plugin-vue) や，[webpack](https://webpack.js.org/) で利用される [vue-loader](https://github.com/vuejs/vue-loader) などがあります．
 
 https://github.com/vitejs/vite-plugin-vue/blob/8d5a270408ff213648cda2a8db8f6cd63d709eb5/packages/plugin-vue/src/compiler.ts#L25-L31
