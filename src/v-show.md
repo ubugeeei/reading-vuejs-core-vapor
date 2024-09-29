@@ -9,7 +9,7 @@ const flag = ref("");
 </script>
 
 <template>
-  <p v-show="text">Hello, v-show!</p>
+  <p v-show="flag">Hello, v-show!</p>
 </template>
 ```
 
@@ -45,12 +45,12 @@ const t0 = _template("<p>Hello, v-show!</p>");
 
 function _sfc_render(_ctx) {
   const n0 = t0();
-  _withDirectives(n0, [[_vShow, () => _ctx.text]]);
+  _withDirectives(n0, [[_vShow, () => _ctx.flag]]);
   return n0;
 }
 ```
 
-What stands out is the part `_withDirectives(n0, [[_vShow, () => _ctx.text]]);`.\
+What stands out is the part `_withDirectives(n0, [[_vShow, () => _ctx.flag]]);`.\
 Continuing from last time, it uses the `withDirectives` function again, but this time it uses the `vShow` function as the runtimeDirective.
 
 ## Reading the Compiler
