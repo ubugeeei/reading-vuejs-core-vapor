@@ -1,4 +1,4 @@
-# The v-show Directive
+# The v-html Directive
 
 Consider a component like the following.
 
