@@ -6,6 +6,11 @@
   --vp-c-white: #e1e1e1;
   --vp-c-black: #222127;
 
+  --vp-c-neutral: var(--vp-c-black);
+  --vp-c-neutral-inverse: var(--vp-c-white);
+}
+
+.dark {
   --vp-c-neutral: var(--vp-c-white);
   --vp-c-neutral-inverse: var(--vp-c-black);
 }
@@ -39,6 +44,34 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --vp-c-gray-1: #dddde3;
+  --vp-c-gray-2: #e4e4e9;
+  --vp-c-gray-3: #ebebef;
+  --vp-c-gray-soft: rgba(142, 150, 170, 0.14);
+  --vp-c-indigo-1: #3451b2;
+  --vp-c-indigo-2: #3a5ccc;
+  --vp-c-indigo-3: #5672cd;
+  --vp-c-indigo-soft: rgba(100, 108, 255, 0.14);
+  --vp-c-purple-1: #6f42c1;
+  --vp-c-purple-2: #7e4cc9;
+  --vp-c-purple-3: #8e5cd9;
+  --vp-c-purple-soft: rgba(159, 122, 234, 0.14);
+  --vp-c-green-1: #18794e;
+  --vp-c-green-2: #299764;
+  --vp-c-green-3: #30a46c;
+  --vp-c-green-soft: rgba(16, 185, 129, 0.14);
+  --vp-c-yellow-1: #915930;
+  --vp-c-yellow-2: #946300;
+  --vp-c-yellow-3: #9f6a00;
+  --vp-c-yellow-soft: rgba(234, 179, 8, 0.14);
+  --vp-c-red-1: #b8272c;
+  --vp-c-red-2: #d5393e;
+  --vp-c-red-3: #e0575b;
+  --vp-c-red-soft: rgba(244, 63, 94, 0.14);
+  --vp-c-sponsor: #db2777;
+}
+
+.dark {
   --vp-c-gray-1: #515c67;
   --vp-c-gray-2: #414853;
   --vp-c-gray-3: #32363f;
@@ -85,6 +118,13 @@
  *   the page. Used for things like "carbon ads" or "table".
  * -------------------------------------------------------------------------- */
 :root {
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f6f6f7;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #f6f6f7;
+}
+
+.dark {
   --vp-c-bg: #222127;
   --vp-c-bg-alt: #222127;
   --vp-c-bg-elv: #222127;
@@ -105,6 +145,12 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --vp-c-border: #c2c2c4;
+  --vp-c-divider: #e2e2e3;
+  --vp-c-gutter: #e2e2e3;
+}
+
+.dark {
   --vp-c-border: #3c3f44;
   --vp-c-divider: #3c3f44;
   --vp-c-gutter: var(--vp-c-divider);
@@ -121,6 +167,12 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --vp-c-text-1: rgba(60, 60, 67);
+  --vp-c-text-2: rgba(60, 60, 67, 0.78);
+  --vp-c-text-3: rgba(60, 60, 67, 0.56);
+}
+
+.dark {
   --vp-c-text-1: #B6B7B8;
   --vp-c-text-2: #B6B7B8;
   --vp-c-text-3: rgba(235, 235, 245, 0.38);
@@ -514,12 +566,4 @@
 
 .vp-adaptive-theme {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.appearance {
-  display: none !important;
-}
-
-.social-links:before {
-  margin-left: 0 !important;
 }
