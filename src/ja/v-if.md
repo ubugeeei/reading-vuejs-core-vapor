@@ -227,4 +227,24 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 ## ランタイムを読む
 
-TBD
+読むのはもちろん `createIf` 関数です．
+
+実装は [packages/runtime-vapor/src/apiCreateIf.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateIf.ts) にあります．
+
+まずはシグネチャから見てみましょう．
+
+https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateIf.ts#L17-L23
+
+condition (getter) と，b1 (true の時の render) と b2 (false の時の render) を受け取ります．
+
+実装を読み進めてみると，どうやら `createChildFragmentDirectives` という関数と，`doIf` という関数が重要そうです．
+
+https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateIf.ts#L49
+
+https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateIf.ts#L77
+
+`createChildFragmentDirectives` の方から見てみましょう．こちらは別ファイルに実装されています．
+
+https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/directivesChildFragment.ts#L14-L25
+
+コメントにあるように，createIf と createFor で使われているもので．ディレクティブの子フラグメントを管理するためのもののようです．
