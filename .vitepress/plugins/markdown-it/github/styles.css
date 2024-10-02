@@ -11,13 +11,21 @@
     border-bottom: 1px solid var(--vp-c-divider);
     font-size: 0.8em;
     color: #666 !important;
+    display:flex;
+    align-items: center;
 
     .filename {
       font-weight: bold;
     }
+
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
   }
 
-  .at {
+  .at,.line-info {
     color: #f8f8f8;
   }
 
