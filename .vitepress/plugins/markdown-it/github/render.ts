@@ -29,7 +29,9 @@ export function renderToHtml(descriptor: GitHubSourceDescriptor): string {
 
   const code = hljs.highlight(c, {
     language: lang,
-  }).value;
+  }).value.split("\n").map((line, i) => {
+    return `<span class="line-number">${i + 1 + (lines?.start ?? 0)}</span>${line}`
+  }).join("\n");
 
   return `
 <div class="github-source">

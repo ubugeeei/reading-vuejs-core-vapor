@@ -28,5 +28,10 @@
     overflow-x: auto;
     font-size: 0.9em;
     line-height: 1.5;
+
+    .line-number {
+      user-select: none;
+      padding-right: 1em;
+    }
   }
 }
