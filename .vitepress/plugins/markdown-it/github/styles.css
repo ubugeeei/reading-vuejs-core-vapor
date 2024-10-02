@@ -11,13 +11,21 @@
     border-bottom: 1px solid var(--vp-c-divider);
     font-size: 0.8em;
     color: #666 !important;
+    display:flex;
+    align-items: center;
 
     .filename {
       font-weight: bold;
     }
+
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
   }
 
-  .at {
+  .at,.line-info {
     color: var(--vp-c-text-1);
   }
 
@@ -28,5 +36,10 @@
     overflow-x: auto;
     font-size: 0.9em;
     line-height: 1.5;
+
+    .line-number {
+      user-select: none;
+      padding-right: 1em;
+    }
   }
 }
