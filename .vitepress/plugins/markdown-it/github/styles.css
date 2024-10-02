@@ -1,13 +1,13 @@
 .github-source {
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
-  background-color: #242529;
+  background-color: var(--vp-code-block-bg);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
   .meta {
     border-radius: 8px;
     padding: 0.5em 1em;
-    background-color: var(--vp-c-black);
+    background-color: var(--vp-code-block-bg);
     border-bottom: 1px solid var(--vp-c-divider);
     font-size: 0.8em;
     color: #666 !important;
@@ -18,7 +18,7 @@
   }
 
   .at {
-    color: #f8f8f8;
+    color: var(--vp-c-text-1);
   }
 
   .code {
