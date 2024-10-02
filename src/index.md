@@ -1,7 +1,7 @@
 # Reading vuejs/core-vapor
 
 <div align="center">
-  <img src="/cover.png" width="600px" alt="Reading vuejs/core-vapor"/>
+  <img src="/cover-transparent.png" width="600px" alt="Reading vuejs/core-vapor"/>
 </div>
 
 ## Introduction
