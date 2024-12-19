@@ -40,11 +40,21 @@ In April 2024, joined the Vue.js organization and became a member of the Vapor T
 https://ublog.dev/
 
 
+## Note
+
+::: warning About the Vue Vapor implementation repository
+
+The implementation of Vue Vapor initially started in a repository called `vuejs/core-vapor`, but it was renamed to `vuejs/vue-vapor` in October 2024.
+
+In this document, the links have been changed to `vuejs/vue-vapor`, but due to the project name and the pages of this document, the text has been unified to `vuejs/core-vapor`.
+
+Please keep in mind that `vuejs/core-vapor` = `vuejs/vue-vapor` as you read. They are different names in the timeline but refer to exactly the same thing.
+
+:::
 
 <div align="center" style="margin-top: 100px">
 
-
-### Support
+## Support
 
 If you'd like to support my work, I'd greatly appreciate it!
 
