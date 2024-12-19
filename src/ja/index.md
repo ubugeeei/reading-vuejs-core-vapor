@@ -28,7 +28,7 @@
 
 ## 著者について
 
-**ubugeeei (うぶげ)** 
+**ubugeeei (うぶげ)**
 
 <img src="/ubugeeei.jpg" alt="ubugeeei" width="200" />
 
@@ -39,12 +39,21 @@ Vapor Mode の開発に立ち上げ (2023/11) から携わる. \
 
 https://ublog.dev/
 
+## 注意
 
+::: warning Vue Vapor の実装リポジトリについて
+
+Vue Vapor の実装は当初，`vuejs/core-vapor` というリポジトリで始まりましたが，2024/10 に `vuejs/vue-vapor` に改名されました．
+
+本書では，文章中のリンクは `vuejs/vue-vapor` に変更していますが，PJ 名や本書の pages の都合上，文言の方は `vuejs/core-vapor` に統一しています．
+
+`vuejs/core-vapor` = `vuejs/vue-vapor` というふうに頭の中で変換しながら読んでいただければと思います．両者は時系列上の別名であり，全く同じものを指しています．
+
+:::
 
 <div align="center" style="margin-top: 100px">
 
-
-### スポンサー
+## スポンサー
 
 もしよろしければ，私の仕事を応援していただけると嬉しいです！
 
