@@ -89,7 +89,7 @@ https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d
 
 ### queueFlush
 
-queueFlush に反しては scheduler の実装の内部でしか扱われていません．\
+queueFlush に関しては scheduler の実装の内部でしか扱われていません．\
 どのタイミングでこれらが実行されるかは実装の詳細を見る時に見ていきましょう．
 
 ### queuePostFlushCb
