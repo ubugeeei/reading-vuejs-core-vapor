@@ -82,7 +82,7 @@ Since Vapor Mode is currently in R&D, the source code changes frequently. \
 It would be quite inconvenient if it changes while we're reading it, so let's find a way to use the vuejs/core-vapor we just checked out locally to confirm things.
 
 In vuejs/core-vapor, there is a directory called `/playground`. \
-You can start this playground by running `pnpm dev-vapor` in `vuejs/core-vapor`. \
+You can start this playground by running `pnpm dev` in `vuejs/core-vapor`. \
 There are some components placed in `/playground/src`. When you access the started playground, you'll find that `/playground/src/App.vue` is running in your browser.
 
 In this playground, `/playground/src` corresponds to routing. For example, if you access `http://localhost:5173/components.vue`, `/playground/src/components.vue` will be executed. \

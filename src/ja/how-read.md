@@ -82,7 +82,7 @@ Vapor Mode は現在 R&D が進行中のためソースコードは頻繁に変�
 読んでる間にも変わってしまうとかなり不都合なので，どうにかして先ほどチェックアウトした手元の vuejs/core-vapor を使って確認できるようにしましょう．
 
 vuejs/core-vapor には `/playground` というディレクトリがあります．\
-`vuejs/core-vapor` で `pnpm dev-vapor` を実行することでこの playground を起動することができます．\
+`vuejs/core-vapor` で `pnpm dev` を実行することでこの playground を起動することができます．\
 そして `/playground/src` にいくつかのコンポーネントが置かれています．起動した playground にアクセスすると，`/playground/src/App.vue` がブラウザで実行されることがわかります．
 
 この playground では `/playground/src` がルーティングに対応していて，例えば， `http://localhost:5173/components.vue` にアクセスすると `/playground/src/components.vue` が実行されます．\
