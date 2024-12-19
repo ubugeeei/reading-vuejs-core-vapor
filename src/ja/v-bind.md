@@ -70,7 +70,7 @@ function _sfc_render(_ctx) {
 
 お馴染み，`transformElement` -> `buildProps` -> `transformProps` -> `directiveTransform` -> `transformVBind` と辿っていきます．
 
-[packages/compiler-vapor/src/transforms/vBind.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vBind.ts)
+[packages/compiler-vapor/src/transforms/vBind.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vBind.ts)
 
 ．．．と思いきや？\
 実はここには shorthand のハンドリングなど，本当に `v-bind` を transform しているだけで，エフェクトの登録などは行われていません．
@@ -78,21 +78,21 @@ function _sfc_render(_ctx) {
 実はここに関しては直接 `transformElement` の `buildProps` に直接実装されています．\
 以下のあたりがその実装です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L236-L244
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L236-L244
 
 その少し上あたりには `v-bind` に `arg` がない場合 (e.g. `v-bind="obj"`) のハンドリングもあります．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L208-L218
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L208-L218
 
 とりあえず，`SET_DYNAMIC_EVENTS` を登録しているところが見れたので OK です．
 
 このまま Codegen も読んでしまいましょう．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L33-L36
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L33-L36
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L40-L41
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L40-L41
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/prop.ts#L63-L83
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/prop.ts#L63-L83
 
 特に難しいところはなかったはずです．
 
@@ -102,8 +102,8 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 `key` が `"class"` や `"style"` だった場合に少々フォーマットしているだけです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/prop.ts#L112-L133
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/prop.ts#L112-L133
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/prop.ts#L22-L27
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/prop.ts#L22-L27
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/style.ts#L12-L15
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/style.ts#L12-L15

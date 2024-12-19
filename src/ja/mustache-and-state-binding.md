@@ -248,19 +248,19 @@ Template AST の概要で一通りの Node はみているので，もう意味�
 
 ここまではいつも通りで，ここからが今回のポイントです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L22
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L22
 
 今回はこのチェックを通る時，
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L89-L96
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L89-L96
 
 `Interpolation` を含んでいるので以下の分岐に入ります．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L29-L37
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L29-L37
 
 `processTextLikeContainer` を見てみましょう．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L63-L78
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L63-L78
 
 どうやらここで `registerEffect` という関数を呼び出しています．\
 そして，正しく `type: IRNodeTypes.SET_TEXT` になっています．
@@ -278,7 +278,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 `registerEffect` という関数の中身を少しみてみましょう．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L137-L140
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L137-L140
 
 引数として，`expressions` と `operations` を受け取ります．
 
@@ -287,7 +287,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 `operations` は新概念です．\
 これは `IR` の一種で，`OperationNode` というものです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L211-L228
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L211-L228
 
 この定義を見れば想像はつくと思いますが，「操作」を表す Node です．\
 例えば，`SetTextIRNode` は「テキストをセットする」という操作です．\
@@ -295,7 +295,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 今回は `SetTextIRNode` が使われているので少しみてみましょう．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L108-L112
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L108-L112
 
 `SetTextIRNode` は element の id (number) と values (SimpleExpression[]) を持ちます．
 
@@ -309,13 +309,13 @@ setText(n0, count);
 
 `registerEffect` の続きに戻ると，
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L151-L154
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L151-L154
 
 入ってきた `expressions` と `operations` を `block.effect` に push しています．
 
 `block.effect` は
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L51
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L51
 
 です．
 
@@ -329,19 +329,19 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 おそらく何も説明なしで読めると思います．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/block.ts#L36-L41
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/block.ts#L36-L41
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/block.ts#L56
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/block.ts#L56
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L75-L81
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L75-L81
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L86-L107
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L86-L107
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L33-L36
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L33-L36
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L42-L43
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L42-L43
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/text.ts#L12-L26
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/text.ts#L12-L26
 
 なんとあっさり！コンパイラ完全制覇です！
 
@@ -371,51 +371,51 @@ application のエントリで component のインスタンスが作られ，コ
 実際に `render` が実行された時に何が起こるかを見ていきましょう．
 
 まずは `setText` です．\
-この辺りのオペレーションは概ね [packages/runtime-vapor/src/dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom) に実装されています．
+この辺りのオペレーションは概ね [packages/runtime-vapor/src/dom](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom) に実装されています．
 
 `setText` の実装は以下です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/prop.ts#L188-L194
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/prop.ts#L188-L194
 
 本当に単純なことしかしていません．ただの DOM 操作です． `values` を `join` して `el` の `textContent` に突っ込みます．
 
 あとは `renderEffect` の実装を見てこのページは終わりにしましょう．\
 改めて `renderEffect` は「update hook 実行付きの watchEffect」です．
 
-実装は [packages/runtime-vapor/src/renderEffect.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts) にあります．
+実装は [packages/runtime-vapor/src/renderEffect.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts) にあります．
 
 現在の instance や effectScope を設定しつつ，コールバックをラップして，
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L19-L35
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L19-L35
 
 `ReactiveEffect` を生成します．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L37-L39
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L37-L39
 
 `effect.scheduler` (effect.run 経由ではなく，trigger 等で呼ばれる動作) には `job` という関数 (後述) を設定しています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L41
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L41
 
 以下が初回実行になります．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L50
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L50
 
 `job` 部分です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L52
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L52
 
 `effect` の実行の前にライフサイクルフック (beforeUpdate) を実行します．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L62-L70
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L62-L70
 
 そして `effect` の実行を行い．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L72
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L72
 
 最後にライフサイクルフック (updated) を実行します．\
 実際にはスケジューラのキューに積んでいるだけです．\
 (スケジューラがいい感じに重複排除等を行って然るべきところで実行されます)
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L74-L85
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/renderEffect.ts#L74-L85
 
 そろそろスケジューラ周りの実装がよく出てくるよになったので，次のページではスケジューラの実装について少し見てみましょう！

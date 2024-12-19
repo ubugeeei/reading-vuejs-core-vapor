@@ -18,7 +18,7 @@ Lexical analysis is the process of analyzing code, which is just a string, into 
 
 Tokens are meaningful chunks of strings. Let's look at the actual source code to see what they are.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L87-L138
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L87-L138
 
 :::info Tips
 
@@ -28,7 +28,7 @@ This parser is known as one of the fastest HTML parsers, and Vue.js [significant
 
 This is also mentioned in the source code:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L1-L3
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L1-L3
 
 :::
 
@@ -40,7 +40,7 @@ Looking specifically, we have the default state `Text`, `{{` representing the st
 
 As you can see around:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L47-L84
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L47-L84
 
 the strings to be parsed are encoded as `Uint8Array` or numbers to improve performance. (I'm not very familiar with it, but numerical comparisons are probably faster.)
 
@@ -48,33 +48,33 @@ Since it's a forked implementation of `htmlparser2`, it's debatable whether this
 
 Below is where the Tokenizer's implementation starts:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L236
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L236
 
 As you can see from the constructor, callbacks for each token are defined to achieve "tokenize -> parse".
 
 (In the upcoming `parser.ts`, the parsing of templates is realized by defining these callbacks.)
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L265-L268
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L265-L268
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L180-L208
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L180-L208
 
 Then, the `parse` method is the initial function:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L923-L928
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L923-L928
 
 It reads (stores) the source into the buffer and processes it one character at a time.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L929-L930
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L929-L930
 
 It executes callbacks in specific states.
 
 The initial value is `State.Text`, so it starts there.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L935-L943
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L935-L943
 
 For example, if the `state` is `Text` and the current character is `<`, it executes the `ontext` callback while updating `state` to `State.BeforeTagName`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L318-L324
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/tokenizer.ts#L318-L324
 
 In this way, it reads characters in specific states and transitions states based on the character type, proceeding step by step.
 
@@ -90,11 +90,11 @@ Now that we have a general understanding of the tokenizer's implementation, let'
 
 This is implemented in `parser.ts`.
 
-[packages/compiler-core/src/parser.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts)
+[packages/compiler-core/src/parser.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts)
 
 Here, the `Tokenizer` we just discussed is used:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L97
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L97
 
 Callbacks are registered for each token to build the template's AST.
 
@@ -104,23 +104,23 @@ Please focus on the `oninterpolation` callback.
 
 As the name suggests, this is processing related to the `Interpolation` Node.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L108-L108
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L108-L108
 
 Using the length of the delimiters (default is `{{` and `}}`) and the passed indices, it calculates the indices of the inner content of the `Interpolation`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L112-L113
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L112-L113
 
 Based on those indices, it retrieves the inner content:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L120
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L120
 
 Finally, it generates a Node:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L129-L133
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L129-L133
 
 `addNode` is a function that pushes the Node into the existing stack if there is one, or into the root's children if not.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L916-L918
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L916-L918
 
 The `stack` is a stack where elements are pushed as they nest.
 
@@ -128,13 +128,13 @@ Since we're here, let's look at that process as well.
 
 When an open tag is finished—for example, if it's `<p>`, at the timing of the `>`—the current tag is `unshift`ed into the stack:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L567-L586
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L567-L586
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L580
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L580
 
 Then, in `onclosetag`, it shifts the stack:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L154-L166
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/parser.ts#L154-L166
 
 In this way, by making full use of the `Tokenizer` callbacks, the AST is constructed.
 

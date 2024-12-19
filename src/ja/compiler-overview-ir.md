@@ -13,7 +13,7 @@ IR は Intermediate Representation の略で，中間表現のことです．\
 `SFCDescriptor` や `AST` が概ねユーザー(Web アプリケーション開発者)の入力コードを構造化したものだったのに対し，`IR` は言わば「出力コードを構造化したもの」です．\
 `IR` の定義は ir/index.ts にあります．
 
-[packages/compiler-vapor/src/ir/index.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts)
+[packages/compiler-vapor/src/ir/index.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts)
 
 最初に読んだ小さいコンポーネントのコンパイラ結果を思い出して欲しいのですが，
 
@@ -34,7 +34,7 @@ function _sfc_render(_ctx) {
 
 以下のあたりに transform 関数があるので，transform 後の ir を出力してみます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/compile.ts#L76-L89
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/compile.ts#L76-L89
 
 ```json
 {
@@ -178,13 +178,13 @@ IR の type が enum で表現されている兼ね合いで数値になって�
 この `RootIRNode` は `node`, `template`, `block` の情報を持っていて，\
 `node` は AST の `RootNode` になっています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L56-L64
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L56-L64
 
 そして，`block` には `BlockIRNode` があり，これが Vapor で扱う要素の単位である，`Block` を表現したものになります．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L63
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L63
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L47-L54
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L47-L54
 
 ここで少し `Block` の説明です．
 
@@ -195,7 +195,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 `Block` の定義は `runtime-vapor` にあるので少しみてみましょう．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L26-L31
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L26-L31
 
 これをみると `Block` が概ねどういうものがわかるはずです．\
 `Block` は Node (DOM Node), Fragment, Component または Block の配列を取ります．\
@@ -211,7 +211,7 @@ const n0 = t0();
 の `n0` は Node (Element) という Block になります．\
 詳しくはまたランタイムの解説の方でみますが，ちらっと `template` という関数を見てましょう．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/template.ts#L2-L11
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/template.ts#L2-L11
 
 単に，innerHTML に template を挿入し，その firstChild を返しているだけです．\
 つまりこれはただの ElementNode です．

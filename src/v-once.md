@@ -55,12 +55,12 @@ We will follow `transformElement` -> `buildProps` -> `transformProps` -> `direct
 
 It's very simple, so I'll include the entire text.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOnce.ts#L1-L12
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOnce.ts#L1-L12
 
 It simply enables the `inVOnce` flag that `context` holds.
 
 When `inVOnce` is true, it calls `registerOperation` with `registerEffect` and finishes, meaning no effect is generated.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L137-L144
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L137-L144
 
 Since there is nothing particularly to read in the runtime, this concludes it for now.

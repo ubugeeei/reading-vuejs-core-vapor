@@ -4,31 +4,31 @@ From here, let's look at the details of each part explained earlier.
 
 Since the parser for SFC is part of the SFC compiler, it is implemented in `compiler-sfc`.
 
-[packages/compiler-sfc](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
+[packages/compiler-sfc](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
 
 ## SFCDescriptor
 
 First, the object called `SFCDescriptor`, which is the result of parsing, is an object that holds information about the SFC. \
 It includes the filename, template information, script information, style information, etc.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L76-L102
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L76-L102
 
 The template, script, and style each inherit from an object called `SFCBlock`, and this `SFCBlock` contains information such as `content`, which represents its content, `attrs`, which represents attributes like lang, setup, scoped, etc., and `loc`, which indicates where in the whole SFC it is located.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L39-L47
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L39-L47
 
 The `template` is represented by an object called `SFCTemplateBlock`, which contains the AST explained earlier.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L49-L52
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L49-L52
 
 Similarly, the script is represented by an object called `SFCScriptBlock`. \
 This includes a flag indicating whether it is setup or not, information about the modules being imported, and the AST of the script (JS, TS) that is the content of the block.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L54-L68
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L54-L68
 
 Similarly, the style is represented by an object called `SFCStyleBlock`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L70-L74
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L70-L74
 
 That's roughly the outline of `SFCDescriptor`.
 
@@ -148,16 +148,16 @@ _Note: Some parts are omitted._
 
 The implementation of the parser is the `parse` function below.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L126-L129
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L126-L129
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L104-L107
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L104-L107
 
 The `source` contains the string of the SFC. \
 It parses that string and returns an `SFCDescriptor`.
 
 First, it parses the entire SFC using the template parser.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L162-L169
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L162-L169
 
 The `compiler.parse` in `compiler` comes from options, and this is actually the template parser in `compiler-core`.
 
@@ -174,19 +174,19 @@ In other words, `compiler-core` is in a more general position rather than implem
 
 Through this parsing process, we can get the rough structure of `template`, `script`, `style`, etc., so we then branch and perform detailed parsing for each.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L184-L185
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L184-L185
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L215
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L215
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L229
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L229
 
 In the detailed parts, we process to generate each Block that inherits from the earlier `SFCBlock`. \
 (Basically, we're just calling a formatting function called `createBlock` and doing error handling, so we'll omit the code.)
 
 After that, we generate source maps, etc.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L285-L302
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L285-L302
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L377-L384
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L377-L384
 
 Surprisingly, this completes the parsing process of the SFC.

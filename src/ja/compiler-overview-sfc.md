@@ -4,31 +4,31 @@
 
 SFC のパーサーは SFC のコンパイラの一部なので，`compiler-sfc` に実装されています．
 
-[packages/compiler-sfc](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
+[packages/compiler-sfc](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
 
 ## SFCDescriptor
 
 まず，パース結果となる `SFCDescriptor` というオブジェクトですが，これは SFC の情報を持ったオブジェクトです．\
 filename や template の情報, script の情報, style の情報などが含まれています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L76-L102
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L76-L102
 
 template や script, style はそれぞれ `SFCBlock` というオブジェクトを継承しており，この `SFCBlock` はその内容を表す `content` や，lang, setup, scoped などを表す `attrs`，SFC 全体のどの位置にあるか示す `loc` の情報などを持っています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L39-L47
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L39-L47
 
 `template` は `SFCTemplateBlock` というオブジェクトで表現されており，ここに先ほど説明した AST を持っています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L49-L52
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L49-L52
 
 script も同様に `SFCScriptBlock` というオブジェクトで表現されています．\
 ここには setup であるかどうかのフラグや，import しているモジュールの情報，ブロックの中身であるスクリプト (JS, TS) の AST などが含まれています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L54-L68
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L54-L68
 
 style も同様に `SFCStyleBlock` というオブジェクトで表現されています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L70-L74
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L70-L74
 
 `SFCDescriptor` の概要はざっとこんな感じです．
 
@@ -148,16 +148,16 @@ ast については今は詳しく読めなくて問題ありません．これ�
 
 パーサーの実装は以下の `parse` という関数です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L126-L129
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L126-L129
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L104-L107
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L104-L107
 
 source には SFC の文字列が入ってきます\
 そしてその文字列を解析し，`SFCDescriptor` を返します．
 
 まず，template のパーサーによって SFC 全体パースします．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L162-L169
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L162-L169
 
 compiler.parse の compiler は options からきているもので，これは実は `compiler-core` にある template のパーサーです．
 
@@ -174,19 +174,19 @@ Vue.js の HTML っぽいものを解析するときは基本 `compiler-core` �
 
 このパース処理によって概ね `template` や `script` , `style` などの大枠の構造を得ることができるので，あとはそれぞれで分岐をして詳細なパース処理を行います．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L184-L185
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L184-L185
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L215
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L215
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L229
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L229
 
 詳細部分では，先ほどの `SFCBlock` を継承したそれぞれの Block を生成するために処理を行っています．\
 (概ね createBlock という整形関数を読んだり，エラハンを行ったりしているだけなのでコードは省略します)
 
 あとは，ソースマップの生成等を行います．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L285-L302
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L285-L302
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L377-L384
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/parse.ts#L377-L384
 
 なんと，これで SFC のパース処理は終わりです．

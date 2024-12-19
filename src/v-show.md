@@ -59,7 +59,7 @@ We will follow `transformElement` -> `buildProps` -> `transformProps` -> `direct
 
 It's very simple, so I'll include the entire text.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vShow.ts#L1-L20
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vShow.ts#L1-L20
 
 It's just registering `WITH_DIRECTIVE` with `name: 'vShow'`.
 
@@ -69,7 +69,7 @@ This is also simple, so I'll include the entire text.
 
 It simply sets `el.style.display` to `none` or `""` in `beforeMount`, `updated`, and `beforeUnmount`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/directives/vShow.ts#L1-L23
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/directives/vShow.ts#L1-L23
 
 ---
 

@@ -39,10 +39,10 @@ Let me explain in detail where to write the SFC and how to run it through the Va
 For now, let's clone vuejs/core-vapor to your local machine. \
 Then, check out `30583b9ee1c696d3cb836f0bfd969793e57e849d`.
 
-[vuejs/core-vapor (30583b9ee1c696d3cb836f0bfd969793e57e849d)](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d)
+[vuejs/core-vapor (30583b9ee1c696d3cb836f0bfd969793e57e849d)](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d)
 
 ```bash
-git clone https://github.com/vuejs/core-vapor.git
+git clone https://github.com/vuejs/vue-vapor.git
 
 cd core-vapor
 
@@ -51,7 +51,7 @@ git checkout 30583b9ee1c696d3cb836f0bfd969793e57e849d
 pnpm install
 ```
 
-When we read the [README](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/README.md?plain=1#L3-L6):
+When we read the [README](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/README.md?plain=1#L3-L6):
 
 ```md
 This repository is a fork of [vuejs/core](https://github.com/vuejs/core) and is used for research and development of no virtual dom mode.
@@ -77,7 +77,7 @@ It's a tool to check the compilation results of Vue.js templates (not limited to
 So, you can't see what the styles or scripts in an SFC are transformed into.
 
 So, let's use the Playground! Or so I'd like to say, but there's a slight problem. \
-This time, we'll be reading the code at [30583b9ee1c696d3cb836f0bfd969793e57e849d](https://github.com/vuejs/core-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d), but the Playground hosted at this link cannot fix the commit. \
+This time, we'll be reading the code at [30583b9ee1c696d3cb836f0bfd969793e57e849d](https://github.com/vuejs/vue-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d), but the Playground hosted at this link cannot fix the commit. \
 Since Vapor Mode is currently in R&D, the source code changes frequently. \
 It would be quite inconvenient if it changes while we're reading it, so let's find a way to use the vuejs/core-vapor we just checked out locally to confirm things.
 

@@ -56,7 +56,7 @@ export default Object.assign(_sfc_main, {
 
 `compiler-sfc` のエントリポイントを見てもわかる通り，ここにはバラバラの compiler が export されているだけです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/index.ts#L4-L7
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/index.ts#L4-L7
 
 これらを統合的に扱う実装はここにはありません．
 
@@ -318,19 +318,19 @@ https://github.com/vitejs/vite-plugin-vue/blob/d8e849f147c159de90c1758f7001bcd2f
 
 つまり，定義自体は `SFCScriptCompileOptions`, `SFCTemplateCompileOptions` の方に存在しています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileScript.ts#L128-L131
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileScript.ts#L128-L131
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileTemplate.ts#L60
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileTemplate.ts#L60
 
 あとは，plugin を設定する際に引数としてこのフラグを渡せばコンパイラを切り替えることができます．\
 参考までに，`vuejs/core-vapor` の playground では以下のように設定しています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/playground/vite.config.ts#L18-L22
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/playground/vite.config.ts#L18-L22
 
 あとはここから fallthrough されたフラグをもとにコンパイラを切り替わる実装がされていれば良いはずです．\
 この実装は以下で行われています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileTemplate.ts#L212-L218
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileTemplate.ts#L212-L218
 
 :::info コンパイラ切り替えの API について
 将来的にはコンパイラの切り替えはコンポーネントごとに出来るようになります．\
@@ -338,6 +338,6 @@ API はまだ定まっていませんが， `<script vapor>` のようなもの�
 
 ちなみに，API の策定は以下の issue で議論しています．
 
-https://github.com/vuejs/core-vapor/issues/198
+https://github.com/vuejs/vue-vapor/issues/198
 :::
 

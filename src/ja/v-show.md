@@ -59,7 +59,7 @@ function _sfc_render(_ctx) {
 
 非常にシンプルなので全文載せてしまいます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vShow.ts#L1-L20
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vShow.ts#L1-L20
 
 `name: 'vShow'` で `WITH_DIRECTIVE` を登録しているだけです．
 
@@ -69,7 +69,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 `beforeMount`, `updated`, `beforeUnmount` で `el.style.display` を `none` にしたり `""` にしたりしているだけです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/directives/vShow.ts#L1-L23
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/directives/vShow.ts#L1-L23
 
 ---
 

@@ -10,7 +10,7 @@ Vapor Mode は Vue.js の新たなコンパイラ実装です．
 
 Vapor Mode のコンパイラの実装は概ね `/packages/compiler-vapor` にあります．
 
-[packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor)
+[packages/compiler-vapor](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor)
 
 ここで，「概ね」と言ったのには理由があります．
 

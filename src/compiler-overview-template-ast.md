@@ -14,13 +14,13 @@ Information such as directives, mustaches, slots, etc., are represented as ASTs 
 
 The implementation is in `ast.ts` of `compiler-core`.
 
-[packages/compiler-core/src/ast.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts)
+[packages/compiler-core/src/ast.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts)
 
 Let's read through the overall structure.
 
 Looking at the types of Nodes, we can see that there are several categories.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L29-L61
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L29-L61
 
 - Plain
 - Containers
@@ -39,14 +39,14 @@ Let's look at the others!
 
 First, the basic AST Node types without any specific category.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L29-L37
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L29-L37
 
 ### Root
 
 As the name suggests, Root represents the root of the template.\
 It has Nodes in its `children`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L111-L128
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L111-L128
 
 ### Element
 
@@ -57,21 +57,21 @@ Components and slots also correspond to this.
 These also have Nodes in their `children`.\
 They also have attribute information and directive information.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L136-L175
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L136-L175
 
 ### Text
 
 Text is, as the name suggests, Text.\
 In `<p>hello</p>`, `hello` corresponds to this.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L183-L186
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L183-L186
 
 ### Comment
 
 Comment is a comment.\
 `<!-- comment -->` corresponds to this.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L188-L191
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L188-L191
 
 ### SimpleExpression
 
@@ -84,7 +84,7 @@ The `foo` in `{{ foo }}` and the `handlers.onClick` in `<button @click="handlers
 
 </div>
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L232-L254
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L232-L254
 
 ### Interpolation
 
@@ -95,14 +95,14 @@ This is a mustache.\
 
 </div>
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L256-L259
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L256-L259
 
 ### Attribute
 
 This corresponds to attributes (not directives).\
 In `<div id="app">`, `id="app"` corresponds to this.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L193-L198
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L193-L198
 
 ### Directive
 
@@ -111,13 +111,13 @@ This is a directive.
 `v-on:click="handler"` and `v-for="item in items"` correspond to this.\
 Of course, shorthand notations like `@click="handler"` and `#head` are also included.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L200-L218
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L200-L218
 
 ## Containers
 
 Containers are Nodes with specific structures.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L39-L43
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L39-L43
 
 The order might be a bit out of sequence, but let's look at the easier ones first.
 
@@ -125,7 +125,7 @@ The order might be a bit out of sequence, but let's look at the easier ones firs
 
 `If` and `IfBranch` are Nodes represented by `v-if`, `v-else-if`, and `v-else`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L286-L298
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L286-L298
 
 Structurally, an `IfNode` has multiple `IfBranchNode`s, and an `IfBranchNode` has a `condition` (condition) and `children` (Nodes when that condition is met).\
 In the case of `v-else`, `condition` becomes `undefined`.
@@ -134,9 +134,9 @@ In the case of `v-else`, `condition` becomes `undefined`.
 
 This is the Node represented by `v-for`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L300-L309
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L300-L309
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L311-L317
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L311-L317
 
 In `<div v-for="it in list">`, `source` becomes `list`, and `value` becomes `it`.
 
@@ -146,7 +146,7 @@ This is a somewhat hard-to-understand concept.
 
 `compound` means "composite", and this Node is composed of multiple Nodes.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L261-L284
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L261-L284
 
 <div v-pre>
 
@@ -159,7 +159,7 @@ the Vue.js compiler treats these together as a `CompoundExpression`.
 
 The noteworthy point is that types like `string` and `Symbol` can be seen in `children`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L269-L275
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L269-L275
 
 This is a mechanism to treat partial strings not as some AST Node but as literals for simplicity.
 
@@ -184,7 +184,7 @@ It's like an AST as follows:
 
 ### TextCall
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L319-L323
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L319-L323
 
 This is a Node used when expressing Text as a function call `createText`.\
 For now, you don't need to worry too much about it.

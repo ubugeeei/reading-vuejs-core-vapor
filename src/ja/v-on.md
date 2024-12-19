@@ -121,20 +121,20 @@ _delegate(n0, "click", () => _ctx.increment);
 例の如く `IR` を覗いてみましょう．\
 IR としては怪しそうなものは `SET_EVENT` というものがありますが，他には見当たりません．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L22
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L22
 
 みてみましょう．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L115-L132
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L115-L132
 
 どうやらこの Node が `delegate` というフラグを持っているようです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L129
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L129
 
 それでは，この Node を生成している transformer を探してみましょう．\
-ありました．[packages/compiler-vapor/src/transforms/vOn.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts) です．
+ありました．[packages/compiler-vapor/src/transforms/vOn.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts) です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L73-L86
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L73-L86
 
 ### DirectiveTransform
 
@@ -142,32 +142,32 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 DirectiveTransform は `transformElement` から呼ばれます．\
 具体的には要素の属性を取り回す処理の途中で呼ばれます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L42
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L42
 
 ↓
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L56-L60
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L56-L60
 
 ↓
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L188-L192
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L188-L192
 
 ↓
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L255
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L255
 
 ↓
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L284-L288
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L284-L288
 
 ↓
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L301-L304
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformElement.ts#L301-L304
 
 今回の場合は，`on` 等名前から v-on の transformer を取得し，`transformVOn` が呼ばれます．\
 そして，`transformVOn` では最後に `context.registerEffect` が呼ばれており，ここで effect が登録されます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L88
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L88
 
 ### transformVOn
 
@@ -178,21 +178,21 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 ここから `arg` や `expr`, `modifiers` などを取り出していきます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L21
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L21
 
 簡単に説明しておくと，`v-on:click.stop="handler"` の `click` が `arg` に，`stop` が `modifiers` に，`handler` が `expr` に該当します．
 
 まずは `modifiers` を種類別に解決して整理しておきます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L32-L38
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L32-L38
 
 `resolveModifiers` は `compiler-dom` に実装された関数で，modifiers を分類します．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom/src/transforms/vOn.ts#L35-L44
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom/src/transforms/vOn.ts#L35-L44
 
 続いて，`delegate` を有効にするかの判定です． (とりあえず delegate が何なのか，というのは置いておきましょう．)
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L42-L43
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L42-L43
 
 以下の条件を全て満たす時に有効になります．
 
@@ -201,26 +201,26 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 - modifiers が空である
 - delegate 対象である\
   ここに定義されたイベントであるかどうかの判定です．
-  https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L13-L18
+  https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L13-L18
 
 あとはこれまでに得られた情報をもとに，`registerEffect` で effect を登録したらおしまいです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L73-L88
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOn.ts#L73-L88
 
 ## Codegen を読む．
 
 `delegate` フラグあたりがどう影響しているかだけ重点的に見て，あとはさらっと見ていきましょう．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L33-L36
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L33-L36
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L44-L45
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L44-L45
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/event.ts#L17-L42
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/event.ts#L17-L42
 
 この流れはもはや見慣れたもので，難しいところはないはずです．\
 注目したいのは特にここです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/event.ts#L36
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/event.ts#L36
 
 `IR` の `delegate` が有効な場合には `delegate` ヘルパーを，そうでない場合は `on` ヘルパーを生成しています．\
 つまりはこの次にランタイムを読む時にこの 2 つを見比べてみると `delegate` の役割が掴めそうです．
@@ -228,7 +228,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 直前で，`context.delegates` にイベントを登録しているのもわかります．\
 これがおそらく hoist された `_delegateEvents("click");` の部分であることもわかります．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/event.ts#L28-L31
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/event.ts#L28-L31
 
 ## ランタイムを読む
 
@@ -241,7 +241,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 実装は以下です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L83-L96
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L83-L96
 
 コメントアウトを見る通り，どうやらこの概念は Solid から拝借したもののようです．\
 Solid のドキュメントを見てみると delegate の説明が書いてあります．
@@ -260,7 +260,7 @@ delegateEvents は渡された events で document に対して `delegatedEventH
 
 `delegatedEventHandler` を見てみましょう．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L98-L128
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L98-L128
 
 `e.composedPath` はイベントの経路 (EventTarget) を配列で返すメソッドです．
 
@@ -274,33 +274,33 @@ e.composedPath(); // [button, div, body, html, document]
 
 まず，`getMetadata` という関数で `node` からメタデータを取得し，そこにあるイベント情報からハンドラを取得します．\
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L114
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L114
 
 そしてそのハンドラを全て実行します．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L115-L118
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L115-L118
 
 そしたらこの流れを host, parent を遡って実行していきます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L123-L126
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L123-L126
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L113
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L113
 
 この流れで `delegate` も読んでしまいましょう．
 
 ### delegate
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L58-L67
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L58-L67
 
 delegate は handler を作り， delegate フラグを立てた状態でメタデータに登録します．
 
-`recordEventMetadata` は [packages/runtime-vapor/src/componentMetadata.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/componentMetadata.ts) という別のファイルに実装されています．
+`recordEventMetadata` は [packages/runtime-vapor/src/componentMetadata.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/componentMetadata.ts) という別のファイルに実装されています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/componentMetadata.ts#L21-L26
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/componentMetadata.ts#L21-L26
 
 これを見てもわかる通り，メタデータは要素に直接，`$$metadata` というプロパティに登録されるもので．以下のような型になっています
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/componentMetadata.ts#L5-L13
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/componentMetadata.ts#L5-L13
 
 イベントハンドラと Props を持っているようです．
 
@@ -312,9 +312,9 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 こちらは非常に単純で，queuePostFlushCb で addEventListener を呼び出しています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L29-L51
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L29-L51
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L14-L22
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/event.ts#L14-L22
 
 クリーンナップ処理も実装されています．
 

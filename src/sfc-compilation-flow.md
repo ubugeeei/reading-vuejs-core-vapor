@@ -58,7 +58,7 @@ The compiler is just called at the appropriate timing, implemented in `compiler-
 
 As you can see from the entry point of `compiler-sfc`, only separate compilers are exported here.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/index.ts#L4-L7
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/index.ts#L4-L7
 
 There is no implementation here that handles these in an integrated manner.
 
@@ -323,22 +323,22 @@ https://github.com/vitejs/vite-plugin-vue/blob/d8e849f147c159de90c1758f7001bcd2f
 
 In other words, the definitions themselves exist in `SFCScriptCompileOptions` and `SFCTemplateCompileOptions`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileScript.ts#L128-L131
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileScript.ts#L128-L131
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileTemplate.ts#L60
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileTemplate.ts#L60
 
 After that, you can switch the compiler by passing this flag as an argument when setting up the plugin. For reference, in the `vuejs/core-vapor` playground, it is set up as follows:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/playground/vite.config.ts#L18-L22
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/playground/vite.config.ts#L18-L22
 
 Then, as long as the implementation switches the compiler based on the flag that has fallen through from here, it should work. This implementation is done below:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileTemplate.ts#L212-L218
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc/src/compileTemplate.ts#L212-L218
 
 :::info About the Compiler Switching API
 In the future, switching the compiler will be possible per component. Although the API is not yet decided, something like `<script vapor>` is proposed.
 
 Incidentally, the formulation of the API is being discussed in the following issue:
 
-https://github.com/vuejs/core-vapor/issues/198
+https://github.com/vuejs/vue-vapor/issues/198
 :::
