@@ -9,23 +9,23 @@ By distinguishing what is specific to core-vapor and what comes from the origina
 
 The v3 repository is managed as a monorepo using [pnpm workspace](https://pnpm.io/workspaces). \
 Each package is located in the `/packages` directory.\
-[packages](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages)
+[packages](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages)
 
 These packages are broadly divided into two categories: compiler and runtime. \
 Packages starting with `compiler-` are related to the compiler, and those starting with `runtime-` are related to the runtime.
 
-- [packages/compiler-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core)
-- [packages/compiler-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom)
-- [packages/compiler-sfc](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
-- [packages/runtime-core](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core)
-- [packages/runtime-dom](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom)
+- [packages/compiler-core](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core)
+- [packages/compiler-dom](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom)
+- [packages/compiler-sfc](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-sfc)
+- [packages/runtime-core](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core)
+- [packages/runtime-dom](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom)
 
 ---
 
 In core-vapor, new packages `compiler-vapor` and `runtime-vapor` have been added.
 
-- [packages/compiler-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor)
-- [packages/runtime-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor)
+- [packages/compiler-vapor](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor)
+- [packages/runtime-vapor](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor)
 
 ---
 
@@ -33,15 +33,15 @@ Next, an important package is `reactivity`. \
 Implementations like `ref`, `computed`, and `watch` are provided as `@vue/reactivity`, independently from the runtime packages. \
 This is located in `/packages/reactivity`.
 
-- [packages/reactivity](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/reactivity)
+- [packages/reactivity](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/reactivity)
 
 ---
 
 The package that serves as the entry point for Vue.js is located in `/packages/vue`. \
 In `core-vapor`, in addition to this, a package called `/packages/vue-vapor`, which serves as the entry point for Vapor Mode, has been added.
 
-- [packages/vue](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue)
-- [packages/vue-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor)
+- [packages/vue](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue)
+- [packages/vue-vapor](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor)
 
 ---
 
@@ -108,9 +108,9 @@ Providing such functionality is the role of `compiler-dom`.
 
 Example:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom/src/runtimeHelpers.ts#L29-L35
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-dom/src/runtimeHelpers.ts#L29-L35
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom/src/directives/vOn.ts#L30-L36
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom/src/directives/vOn.ts#L30-L36
 
 ## compiler-sfc
 
@@ -133,22 +133,22 @@ The actual functions are implemented in `runtime-dom` and injected. (Utilizing t
 
 Interface:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/renderer.ts#L108-L145
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/renderer.ts#L108-L145
 
 The function `createRenderer` accepts the actual operations as options (not directly called in `runtime-core`):
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/renderer.ts#L325-L328
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/renderer.ts#L325-L328
 
 ## runtime-dom
 
 Includes the actual implementation of the DOM operations described above, and the implementation of injecting them into the core.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom/src/nodeOps.ts#L45-L90
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom/src/nodeOps.ts#L45-L90
 
 It also includes implementations to actually handle DOM events, as mentioned in the compiler explanation. \
 (`compiler-dom` is the implementation for outputting code that calls these.)
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom/src/directives/vOn.ts#L18-L47
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-dom/src/directives/vOn.ts#L18-L47
 
 ## reactivity
 

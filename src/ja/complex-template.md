@@ -400,11 +400,11 @@ const n4 = t1();
 なぜ急に `id` が `4` に飛んでいるかは，children のなかに潜っていき，内から外に登ってくるからです．\
 `transformChildren` の `id` が生成されるのは以下のタイミングでした．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts#L23
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts#L23
 
 これは，この要素の children のを transformNode した後で行われるので，そこからまた再帰的に入った `transformChildren` が先に処理されます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts#L20
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts#L20
 
 つまり，`id` の生成は末端から親にかけてインクリメントされていきます．\
 今回はたまたま，`t1` が持つ子 Node が `#inner` と `span` とその中の Text の 3 つがあるのでこれらにそれぞれ `3`, `2`, `1` の id が振られ (0 は `t0` から得た Node なので)，`t1` から得られる Node には `4` が振られています．
@@ -553,22 +553,22 @@ setText については問題ないでしょう．\
 `IRCreateTextNode` をみてみましょう．\
 こちらも同じく `transformText` で生成されていました．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L45-L61
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L45-L61
 
 この `processTextLike` は 2 つめの分岐である，自身が `INTERPOLATION` がある場合に通ります．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L29-L40
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L29-L40
 
 最後に `IRPrependNode` です．\
 PREPEND_NODE が登録される部分は以下のところです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts#L68-L74
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformChildren.ts#L68-L74
 
 これがどこかというと，`processDynamicChildren` という関数で，`transformChildren` 中の処理で，`isFragment` が `falsy` の場合に呼ばれます．\
 children から一つづつ child を取り出して，`DynamicFlag.INSERT` が立ってる Node を収集します．\
 今回は，
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L45-L61
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/transformText.ts#L45-L61
 
 からも分かる通り，このフラグが立っています．
 
@@ -580,22 +580,22 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 新規の部分は主に `IRCreateTextNode` と `IRPrependNode` です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L33-L36
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L33-L36
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L54-L55
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L54-L55
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/text.ts#L28-L45
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/text.ts#L28-L45
 
 ---
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L58-L59
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/operation.ts#L58-L59
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/dom.ts#L22-L34
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/dom.ts#L22-L34
 
 `firstChild` へのアクセスのコード生成は `genChildren` で分岐されています．\
 firstChild がやや特殊で，それ以外の場合は `children` というヘルパー関数の実行を出力しています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/template.ts#L63-L75
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/generators/template.ts#L63-L75
 
 `genChildren` が `from` や `id` を引き回しながら再帰的に `genChildren` を実行しています．
 
@@ -632,13 +632,13 @@ function _sfc_render(_ctx) {
 `values` として配列か，その getter 関数を受け取っています．\
 getter の場合には dynamic なものとみなし `renderEffect` でラップしています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/element.ts#L39-L49
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/element.ts#L39-L49
 
 ### prepend
 
 prepend は本当に `ParentNode.prepend` を呼んでいるだけです．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/element.ts#L31-L33
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/element.ts#L31-L33
 
 ---
 

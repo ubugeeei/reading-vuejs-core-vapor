@@ -13,7 +13,7 @@ We'll first look at the `IR` before proceeding to read the source code of the `t
 While the `SFCDescriptor` and `AST` were essentially structured versions of the user's (web application developer's) input code, the `IR` can be thought of as the "structured version of the output code." \
 The definition of `IR` can be found in `ir/index.ts`.
 
-[packages/compiler-vapor/src/ir/index.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts)
+[packages/compiler-vapor/src/ir/index.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts)
 
 Recall the compiler output of the small component we read at the beginning:
 
@@ -34,7 +34,7 @@ We can check this by inserting logs into our local compiler.
 
 There's a `transform` function around the following area, so let's output the `ir` after the transform.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/compile.ts#L76-L89
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/compile.ts#L76-L89
 
 ```json
 {
@@ -178,13 +178,13 @@ First, there's a `RootIRNode` at the root. This is the root of the IR. \
 This `RootIRNode` contains information such as `node`, `template`, and `block`. \
 The `node` is the `RootNode` of the AST.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L56-L64
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L56-L64
 
 Then, the `block` contains a `BlockIRNode`, which represents a `Block`, the unit of elements handled in Vapor.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L63
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L63
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L47-L54
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/ir/index.ts#L47-L54
 
 Here, let's explain a bit about `Block`.
 
@@ -195,7 +195,7 @@ It's similar to a `VNode` (virtual DOM node) in non-Vapor Mode.
 
 The definition of `Block` is in `runtime-vapor`, so let's take a look.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L26-L31
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L26-L31
 
 Looking at this, you can get an idea of what a `Block` is. \
 A `Block` takes a Node (DOM Node), a Fragment, a Component, or an array of Blocks. \
@@ -211,7 +211,7 @@ const n0 = t0();
 Here, `n0` becomes a Block, which is a Node (Element). \
 We'll look at this in more detail when we explain the runtime, but let's briefly look at the `template` function.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/template.ts#L2-L11
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/template.ts#L2-L11
 
 It simply inserts the template into `innerHTML` and returns its `firstChild`. \
 In other words, this is just an `ElementNode`.

@@ -58,7 +58,7 @@ function _sfc_render(_ctx) {
 
 非常にシンプルなので全文載せてしまいます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vText.ts#L1-L32
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vText.ts#L1-L32
 
 `registerEffect` しているだけです．\
 `transformText` の時と似たような処理を行っています．

@@ -28,21 +28,21 @@ The primary goal is to **improve performance**.
 ## Target for Source Code Reading
 
 The official Vue.js team provides several repositories under the [`vuejs`](https://github.com/vuejs) GitHub organization.\
-Among them, [`vuejs/core-vapor`](https://github.com/vuejs/core-vapor) is the implementation of Vapor Mode.
+Among them, [`vuejs/core-vapor`](https://github.com/vuejs/vue-vapor) is the implementation of Vapor Mode.
 
-This repository, [`vuejs/core-vapor`](https://github.com/vuejs/core-vapor), is actually a fork of [`vuejs/core`](https://github.com/vuejs/core).\
+This repository, [`vuejs/core-vapor`](https://github.com/vuejs/vue-vapor), is actually a fork of [`vuejs/core`](https://github.com/vuejs/core).\
 What you're probably using regularly, the so-called "Vue.js," is in this [`vuejs/core`](https://github.com/vuejs/core) repository.\
 As of September 2024, Vapor Mode is still in the R&D (research and development) phase, so it hasn't been merged into [`vuejs/core`](https://github.com/vuejs/core) yet.
 
 To add to the complexity, [`vuejs/core`](https://github.com/vuejs/core) is the implementation from Vue.js v3 onwards, while the implementation for v2 and earlier versions is in a separate repository called [`vuejs/vue`](https://github.com/vuejs/vue).\
 (It’s often pointed out that `vuejs/core` has fewer stars, but this is because the repository was moved during the transition to v3.)
 
-For this book, we’ll be focusing on the implementation of Vapor Mode, which means reading through [`vuejs/core-vapor`](https://github.com/vuejs/core-vapor)!
+For this book, we’ll be focusing on the implementation of Vapor Mode, which means reading through [`vuejs/core-vapor`](https://github.com/vuejs/vue-vapor)!
 
 Related repositories for the Vue.js implementation:
 
 ![related repository](/lets-deep-dive/related-repository.drawio.png)
 Additionally, given that this repository is in the R&D phase, it occasionally undergoes large-scale refactoring at irregular intervals.\
 For this book, we'll focus on the code as of **September 16, 2024**.\
-In terms of commits, we'll be looking at the source code up until the 6,700th commit, specifically [`30583b9ee1c696d3cb836f0bfd969793e57e849d`](https://github.com/vuejs/core-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d).\
+In terms of commits, we'll be looking at the source code up until the 6,700th commit, specifically [`30583b9ee1c696d3cb836f0bfd969793e57e849d`](https://github.com/vuejs/vue-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d).\
 ![vuejs/core@30583b9ee1c696d3cb836f0bfd969793e57e849d](/lets-deep-dive/30583b9ee1c696d3cb836f0bfd969793e57e849d.png)

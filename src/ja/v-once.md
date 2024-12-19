@@ -55,12 +55,12 @@ function _sfc_render(_ctx) {
 
 非常にシンプルなので全文載せてしまいます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOnce.ts#L1-L12
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vOnce.ts#L1-L12
 
 `context` が持っている `inVOnce` というフラグを有効にしているだけです．
 
 `inVOnce` の場合は `registerEffect` で `registerOperation` を呼び出して終了，ということになっていてエフェクトが生成されません．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L137-L144
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transform.ts#L137-L144
 
 ランタイムは特に読むところがないので今回はなんとこれでおしまいです．

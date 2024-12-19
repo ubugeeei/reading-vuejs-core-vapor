@@ -14,13 +14,13 @@ AST (Abstract Syntax Tree) です．
 
 実装は，`compiler-core` の `ast.ts` にあります．
 
-[packages/compiler-core/src/ast.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts)
+[packages/compiler-core/src/ast.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts)
 
 全体像を読んでみましょう．
 
 Node の種類を見てみると，いくつかの区分けがあることがわかります．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L29-L61
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L29-L61
 
 - 無印
 - containers
@@ -39,14 +39,14 @@ Vapor Mode では transformer によって AST を IR に変換しますが，Vu
 
 まずは特に区分のないベーシックな AST Node の種類です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L29-L37
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L29-L37
 
 ### Root
 
 Root はその名の通り，template のルートを表しています．\
 children にまた Node を持っています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L111-L128
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L111-L128
 
 ### Element
 
@@ -57,21 +57,21 @@ Element は要素を表す Node です．\
 これらもまた children に Node を持っています．\
 属性情報やディレクティブ情報も持っています．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L136-L175
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L136-L175
 
 ### Text
 
 Text はその名の通り Text です．\
 `<p>hello</p>` の `hello` がこれに該当します．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L183-L186
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L183-L186
 
 ### Comment
 
 Comment はコメントです．\
 `<!-- comment -->` がこれに該当します．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L188-L191
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L188-L191
 
 ### SimpleExpression
 
@@ -84,7 +84,7 @@ SimpleExpression は template 中に登場するシンプルな式です．
 
 </div>
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L232-L254
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L232-L254
 
 ### Interpolation
 
@@ -95,14 +95,14 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 </div>
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L256-L259
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L256-L259
 
 ### Attribute
 
 属性 (ディレクティブではない) がこれに該当します．\
 `<div id="app">` の `id="app"` がこれに該当します．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L193-L198
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L193-L198
 
 ### Directive
 
@@ -111,13 +111,13 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 `v-on:click="handler"` や `v-for="item in items"` がこれに該当します．\
 もちろん，`@click="handler"` や `#head` などのショートハンドも含まれます．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L200-L218
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L200-L218
 
 ## containers
 
 containers は，特定の構造を持つ Node です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L39-L43
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L39-L43
 
 順番は前後してしまいますが，わかりやすいものからみていきましょう
 
@@ -125,7 +125,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 `If`, `IfBranch` は `v-if`, `v-else-if`, `v-else` で表現される Node です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L286-L298
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L286-L298
 
 構造的には `IfNode` が `IfBranchNode` を複数持つ構造で，`IfBranchNode` は `condition` (条件) と，`children` (その条件にあった時の Node) を持ちます．\
 `v-else` の場合は `condition` が `undefined` になります．
@@ -134,9 +134,9 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 `v-for` で表現される Node です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L300-L309
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L300-L309
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L311-L317
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L311-L317
 
 `<div v-for="it in list">` の場合は，`source` が `list`, `value` が `it` になります．
 
@@ -146,7 +146,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 `compound` は「複合の」と言った意味があり，この Node は複数の Node から構成される Node です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L261-L284
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L261-L284
 
 <div v-pre>
 
@@ -159,7 +159,7 @@ Vue.js のコンパイラはこれらをまとめて `CompoundExpression` とし
 
 注目するべきものは，children に string や Symbol といった方が見受けられる点です．
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L269-L275
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L269-L275
 
 これは，部分的な文字列はもはや何かの AST Node として扱うのではなく，リテラルで簡略的に扱うための仕組みです．\
 
@@ -186,7 +186,7 @@ https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849
 
 ### TextCall
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L319-L323
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-core/src/ast.ts#L319-L323
 
 Text を `createText` という関数呼び出しとして表現する際の Node です．\
 とりあえず，あまり気にしなくて良いです．

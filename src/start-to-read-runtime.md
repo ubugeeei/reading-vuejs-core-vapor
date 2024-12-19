@@ -32,13 +32,13 @@ actually works!
 We've been overlooking it, but we haven't explained this package yet.\
 This is the entry point for Vapor Mode.
 
-The source code is located in [packages/vue/vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue/vapor).
+The source code is located in [packages/vue/vapor](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue/vapor).
 
-There is another entry package for Vapor Mode called [packages/vue-vapor](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor), but `vue/vapor` simply imports this package.
+There is another entry package for Vapor Mode called [packages/vue-vapor](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor), but `vue/vapor` simply imports this package.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor/package.json#L2
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue-vapor/package.json#L2
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue/vapor/index.mjs#L1
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/vue/vapor/index.mjs#L1
 
 We import the helper functions necessary for the Vapor runtime from this `vue/vapor`.
 
@@ -56,7 +56,7 @@ This is how you declare a template and obtain a `Block`.
 
 Let's look at the implementation of the `template` function.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/template.ts#L2-L11
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/template.ts#L2-L11
 
 It stores the string passed as an argument into the `innerHTML` of a temporary `template` element and obtains the `Block` by reading the `firstChild` of the `template`.\
 The node created once is kept as a local variable of this function, and subsequent calls result in a `cloneNode`.
@@ -110,20 +110,20 @@ In other words, if we read the implementation of `createVaporApp`, we can unders
 
 ## createVaporApp
 
-The implementation is located in [packages/runtime-vapor/src/apiCreateVaporApp.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts).
+The implementation is located in [packages/runtime-vapor/src/apiCreateVaporApp.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts).
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L22-L25
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L22-L25
 
 It is almost the same as `createApp` in `runtime-core`.
 
 First, it creates the application's context and creates an `App` instance.\
 This `App` instance has a method called `mount`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L38
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L38
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L43-L51
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L43-L51
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L112
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L112
 
 There are also `component` functions for registering components and `use` functions for using plugins.\
 It is mostly the same as traditional Vue.js.
@@ -132,49 +132,49 @@ It is mostly the same as traditional Vue.js.
 
 Let's look at the process of the `mount` function.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L112-L151
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L112-L151
 
 It treats the selector or element passed as an argument as a container.
 
 The implementation of the `normalizeContainer` function is like this:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L114-L118
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L114-L118
 
 After that, it performs `createComponentInstance`, `setupComponent`, and `render` (initial) to complete the mount process.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L123-L131
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L123-L131
 
 ## createComponentInstance
 
 `createComponentInstance` creates an object called `ComponentInternalInstance`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L262-L269
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L262-L269
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L151-L151
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L151-L151
 
 `ComponentInternalInstance` holds internal component information, such as registered lifecycle, props, emit information, state, etc.
 It also holds the definition of the provided component.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L191-L234
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L191-L234
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L167-L181
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L167-L181
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L288
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L288
 
 This is also mostly the same as `runtime-core`.
 
 In `createComponentInstance`, it not only generates a `ComponentInternalInstance` object but also creates an `EffectScope` and initializes `props`, `emit`, and `slot`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L360-L364
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L360-L364
 
 A unique implementation for Vapor is that it holds a `block`.\
 Traditionally, it held a `VNode` (virtual DOM) as `subTree` or `next`, but in Vapor, it holds a `Block`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L158
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/component.ts#L158
 
 Traditional:
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/component.ts#L324-L332
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/component.ts#L324-L332
 
 From now on, the `Block` will be stored here when rendered.
 
@@ -186,22 +186,22 @@ We'll skip them for now.
 Now, let's move on to the rendering process.\
 This is the essence of Vapor Mode.
 
-Previously, in the file [`renderer.ts`](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/renderer.ts), the [`patch` process of the `VNode`](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/renderer.ts#L386-L396) was performed.
+Previously, in the file [`renderer.ts`](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/renderer.ts), the [`patch` process of the `VNode`](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-core/src/renderer.ts#L386-L396) was performed.
 
 In Vapor Mode, there is no VNode or patch, so the initial setup process is everything.\
 Subsequent updates directly manipulate the DOM (Block) via the reactivity system.
 
 For now, since we don't have any state, let's see how the Block obtained from the render function is handled.
 
-This function is located in a file called [packages/runtime-vapor/src/apiRender.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts), which implements the rendering processes.
+This function is located in a file called [packages/runtime-vapor/src/apiRender.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts), which implements the rendering processes.
 
 First, as soon as we enter `setupComponent`, we set the `currentInstance` to the target component.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L40
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L40
 
 Next, various setups are executed within the effectScope generated in `createComponentInstance`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L41
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L41
 
 We won't go into detail about effectScope since it's part of the Vue.js API, but for those who don't know, it's essentially "a way to collect effects and make them easier to clean up later."
 
@@ -209,7 +209,7 @@ https://vuejs.org/api/reactivity-advanced.html#effectscope
 
 By forming various effects within this scope, we can clean up when the component is unmounted by stopping the effectScope.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L155-L161
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L155-L161
 
 Now, let's see what exactly is done within the effectScope.
 
@@ -219,26 +219,26 @@ First is handling the setup function.\
 If the component itself is a function, it is executed as a function component.\
 If it is an object, the setup function is extracted.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L50
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L50
 
 Then, this function is executed.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L56-L61
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L56-L61
 
 The result will be either a state or a Node.
 
 If the result is a Node (or a fragment or component), it is stored in a variable called `block`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L65-L74
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L65-L74
 
 After this, if there is still nothing in the `block` variable, it attempts to obtain the block from the render function.\
 In this component, it enters this branch, and the render function is executed, storing the block (`n0`).
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L78-L87
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L78-L87
 
 At this point, the block is stored in `instance.block`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L96
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L96
 
 And that's it for setting up the screen update.\
 As we'll see when looking at the compilation results of more complex components, most update processes are directly described as effects in the component.
@@ -249,41 +249,41 @@ All that's left is to mount the block obtained from the render function to the D
 
 ## render
 
-At the end of https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L123-L131, we have the `render` part.\
+At the end of https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L123-L131, we have the `render` part.\
 This `render` function is an internal function and is different from the `render` function of the component.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L12-L15
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiCreateVaporApp.ts#L12-L15
 
-Like `setupComponent`, it is implemented in [packages/runtime-vapor/src/apiRender.ts](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts).
+Like `setupComponent`, it is implemented in [packages/runtime-vapor/src/apiRender.ts](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts).
 
 What it does is very simple: it mounts the component and executes the tasks in the queue (scheduler).\
 (※ You don't need to worry about the scheduler for now.)
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L106-L112
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L106-L112
 
 `mountComponent` is also very simple.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L120-L123
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L120-L123
 
 It sets the container (the DOM selected from `#app` in this case) passed as an argument to `instance.container`.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L124-L124
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L124-L124
 
 Then, it executes the beforeMount hook.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L130-L131
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L130-L131
 
 Finally, it inserts the block into the container.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L133
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L133
 
 (The insert function is really just an insert.)
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/element.ts#L23-L29
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/dom/element.ts#L23-L29
 
 After executing the mounted hook, the component's mount is complete.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L135-L142
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/runtime-vapor/src/apiRender.ts#L135-L142
 
 ## Summary
 

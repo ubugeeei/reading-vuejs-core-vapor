@@ -58,7 +58,7 @@ We will follow the path `transformElement` -> `buildProps` -> `transformProps` -
 
 It's very simple, so I'll include the entire text.
 
-https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vText.ts#L1-L32
+https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/packages/compiler-vapor/src/transforms/vText.ts#L1-L32
 
 It simply registers `registerEffect`.\
 It performs similar processing to when `transformText` is called.

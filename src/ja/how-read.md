@@ -39,10 +39,10 @@
 とりあえず手元に vuejs/core-vapor は clone しておきましょう．\
 そして `30583b9ee1c696d3cb836f0bfd969793e57e849d` に checkout してしまいます．
 
-[vuejs/core-vapor (30583b9ee1c696d3cb836f0bfd969793e57e849d)](https://github.com/vuejs/core-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d)
+[vuejs/core-vapor (30583b9ee1c696d3cb836f0bfd969793e57e849d)](https://github.com/vuejs/vue-vapor/tree/30583b9ee1c696d3cb836f0bfd969793e57e849d)
 
 ```bash
-git clone https://github.com/vuejs/core-vapor.git
+git clone https://github.com/vuejs/vue-vapor.git
 
 cd core-vapor
 
@@ -51,7 +51,7 @@ git checkout 30583b9ee1c696d3cb836f0bfd969793e57e849d
 pnpm install
 ```
 
-[README](https://github.com/vuejs/core-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/README.md?plain=1#L3-L6) を読んでみると，
+[README](https://github.com/vuejs/vue-vapor/blob/30583b9ee1c696d3cb836f0bfd969793e57e849d/README.md?plain=1#L3-L6) を読んでみると，
 
 ```md
 This repository is a fork of [vuejs/core](https://github.com/vuejs/core) and is used for research and development of no virtual dom mode.
@@ -77,7 +77,7 @@ Template Explorer は Vapor Mode でどのようなコードが生成される�
 つまり, SFC の style や script がどのようなコードになっているかは確認できません.
 
 じゃあ Playground を使っていこう！と，言いたいところなのですが少し問題があります．\
-今回は [30583b9ee1c696d3cb836f0bfd969793e57e849d](https://github.com/vuejs/core-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d) のコードを読んでいくことになるのですが，このリンクにホストされている Playground はコミットを固定することができません.\
+今回は [30583b9ee1c696d3cb836f0bfd969793e57e849d](https://github.com/vuejs/vue-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d) のコードを読んでいくことになるのですが，このリンクにホストされている Playground はコミットを固定することができません.\
 Vapor Mode は現在 R&D が進行中のためソースコードは頻繁に変更されてしました．\
 読んでる間にも変わってしまうとかなり不都合なので，どうにかして先ほどチェックアウトした手元の vuejs/core-vapor を使って確認できるようにしましょう．
 
