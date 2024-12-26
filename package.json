@@ -16,7 +16,7 @@
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.5.5",
     "highlight.js": "^11.10.0",
-    "node-html-parser": "^6.1.13",
+    "node-html-parser": "^7.0.0",
     "textlint": "^14.2.0",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
     "textlint-rule-prh": "^6.0.0",
