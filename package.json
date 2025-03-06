@@ -2,7 +2,7 @@
   "name": "reading-vuejs-core-vapor",
   "version": "1.0.0",
   "author": "ubugeeei",
-  "packageManager": "pnpm@10.5.2",
+  "packageManager": "pnpm@10.6.0",
   "type": "module",
   "license": "ISC",
   "scripts": {
