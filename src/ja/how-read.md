@@ -78,7 +78,7 @@ Template Explorer は Vapor Mode でどのようなコードが生成される�
 
 じゃあ Playground を使っていこう！と，言いたいところなのですが少し問題があります．\
 今回は [30583b9ee1c696d3cb836f0bfd969793e57e849d](https://github.com/vuejs/vue-vapor/commit/30583b9ee1c696d3cb836f0bfd969793e57e849d) のコードを読んでいくことになるのですが，このリンクにホストされている Playground はコミットを固定することができません.\
-Vapor Mode は現在 R&D が進行中のためソースコードは頻繁に変更されてしました．\
+執筆当時，Vapor Mode は R&D が進行中だったため，ソースコードが頻繁に変更されていました．\
 読んでる間にも変わってしまうとかなり不都合なので，どうにかして先ほどチェックアウトした手元の vuejs/core-vapor を使って確認できるようにしましょう．
 
 vuejs/core-vapor には `/playground` というディレクトリがあります．\
