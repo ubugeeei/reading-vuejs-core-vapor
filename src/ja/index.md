@@ -43,11 +43,15 @@ https://ublog.dev/
 
 ::: warning Vue Vapor の実装リポジトリについて
 
-Vue Vapor の実装は当初，`vuejs/core-vapor` というリポジトリで始まりましたが，2024/10 に `vuejs/vue-vapor` に改名されました．
+Vue Vapor の実装リポジトリについて
 
-本書では，文章中のリンクは `vuejs/vue-vapor` に変更していますが，PJ 名や本書の pages の都合上，文言の方は `vuejs/core-vapor` に統一しています．
+Vue Vapor はローンチ当初，vuejs/core-vapor というリポジトリで開発されていました．\
+この本はその vuejs/core-vapor を前提に書かれています．\
+適宜置き換えて読んでください．
 
-`vuejs/core-vapor` = `vuejs/vue-vapor` というふうに頭の中で変換しながら読んでいただければと思います．両者は時系列上の別名であり，全く同じものを指しています．
+1. 2024 年の 10 月，vuejs/core-vapor は vuejs/vue-vapor にリネームされました．\
+  リポジトリ: https://github.com/vuejs/vue-vapor
+2. 2025 年の 7 月，vuejs/vue-vapor の実装は，[vuejs/core の minor ブランチにマージ](https://github.com/vuejs/core/releases/tag/v3.6.0-alpha.1) され，vuejs/vue-vapor はアーカイブされました．
 
 :::
 
