@@ -48,13 +48,15 @@ https://ublog.dev/
 ## Note
 
 > [!CAUTION] 
-> About the Vue Vapor implementation repository
+> About the Implementation Repository of Vue Vapor
+>
+> Vue Vapor was initially developed in a repository called vuejs/core-vapor at launch.
+> This book is written based on vuejs/core-vapor.
+> Please make appropriate substitutions when reading.
 > 
-> The implementation of Vue Vapor initially started in a repository called `vuejs/core-vapor`, but it was renamed to `vuejs/vue-vapor` in October 2024.
-> 
-> In this document, the links have been changed to `vuejs/vue-vapor`, but due to the project name and the pages of this document, the text has been unified to `vuejs/core-vapor`.
-> 
-> Please keep in mind that `vuejs/core-vapor` = `vuejs/vue-vapor` as you read. They are different names in the timeline but refer to exactly the same thing.
+> 1. In October 2024, vuejs/core-vapor was renamed to vuejs/vue-vapor.\
+>   Repository: https://github.com/vuejs/vue-vapor
+> 2. In July 2025, the implementation of vuejs/vue-vapor was [merged into the minor branch of vuejs/core](https://github.com/vuejs/core/releases/tag/v3.6.0-alpha.1), and vuejs/vue-vapor was archived.
 
 <div align="center">
 
