@@ -35,12 +35,12 @@ jobs:
           bun-version: latest
 
       - uses: actions/cache@v4
-        name: vitepress build cache
+        name: GitHub source cache
         with:
           path: .vitepress/cache
-          key: ${{ runner.os }}-vitepress-${{ hashFiles('**/bun.lock') }}
+          key: ${{ runner.os }}-github-cache-${{ hashFiles('src/**/*.md') }}
           restore-keys: |
-            ${{ runner.os }}-vitepress-
+            ${{ runner.os }}-github-cache-
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

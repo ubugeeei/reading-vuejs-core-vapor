@@ -6,8 +6,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build",
+    "build": "bun run cache && vitepress build",
     "preview": "vitepress preview",
+    "cache": "bun .vitepress/plugins/markdown-it/github/cache.ts",
     "lint": "textlint src",
     "lint:fix": "textlint src --fix",
     "fmt": "oxfmt --write ."
@@ -16,12 +17,10 @@
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^24.0.3",
     "highlight.js": "^11.11.1",
-    "node-html-parser": "^7.0.2",
     "oxfmt": "^0.26.0",
     "textlint": "^15.2.0",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
     "textlint-rule-prh": "^6.0.0",
-    "vitepress": "2.0.0-alpha.15",
-    "xmlhttprequest": "^1.8.0"
+    "vitepress": "2.0.0-alpha.15"
   }
 }
