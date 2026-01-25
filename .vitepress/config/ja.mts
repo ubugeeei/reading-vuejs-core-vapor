@@ -111,23 +111,23 @@ export default (): UserConfig<DefaultTheme.Config> => ({
         link: "/ja/v-html",
       },
       {
-        text: "🚧 v-if",
+        text: "v-if",
         link: "/ja/v-if",
       },
       {
-        text: "🚧 v-for",
+        text: "v-for",
         link: "/ja/v-for",
       },
       {
-        text: "🚧 Template Refs",
+        text: "Template Refs",
         link: "/ja/template-refs",
       },
       {
-        text: "🚧 コンポーネント",
+        text: "コンポーネント",
         link: "/ja/component",
       },
       {
-        text: "🚧 v-slot",
+        text: "v-slot",
         link: "/ja/v-slot",
       },
     ],

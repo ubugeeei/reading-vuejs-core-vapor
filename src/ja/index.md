@@ -32,12 +32,16 @@
 
 <img src="/ubugeeei.jpg" alt="ubugeeei" width="200" />
 
-Vue.js メンバー, Vue.js Japan User Group コアスタッフ．\
-Vapor Mode の開発に立ち上げ (2023/11) から携わる. \
-2023/12 に vuejs/core-vapor の external collaborator になる.\
-2024/4 に vuejs organization のメンバーになり，Vapor Team のメンバーになる.
+[Vue.js](https://vuejs.org) メンバー, [Vue.js Japan User Group](https://vuejs-jp.org) コアスタッフ．\
+[chibivue.land](https://chibivue.land) の王．\
+[@mates-system](https://github.com/mates-system) チーフエンジニア．
 
-https://ublog.dev/
+Vapor Mode の開発に立ち上げ (2023/11) から携わる．\
+2023/12 に vuejs/core-vapor の external collaborator になる．\
+2024/4 に vuejs organization のメンバーになり，Vapor Team のメンバーになる．\
+2025/7 に Vapor Mode が vuejs/core にマージされる．
+
+https://wtrclred.io/
 
 ## 注意
 
@@ -63,15 +67,11 @@ Vue Vapor はローンチ当初，vuejs/core-vapor というリポジトリで�
 
 https://github.com/sponsors/ubugeeei
 
-<img class="sponsors" src="https://raw.githubusercontent.com/ubugeeei/sponsors/main/sponsors.png" alt="ubugeeei's sponsors" width="400px">
+<img class="sponsors" src="https://raw.githubusercontent.com/ubugeeei/sponsors/main/sponsors-transparent.png" alt="ubugeeei's sponsors" width="400px">
 
 </div>
 
 <style scoped>
-img.sponsors {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
 h2:nth-of-type(1) {
   margin-top: 0px;
 }

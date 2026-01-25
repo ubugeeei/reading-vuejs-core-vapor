@@ -1,46 +1,195 @@
 .github-source {
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  background-color: var(--vp-code-block-bg);
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  margin: 12px 0;
-
-  .meta {
+    border: 1px solid var(--vp-c-divider);
     border-radius: 8px;
-    padding: 0.5em 1em;
     background-color: var(--vp-code-block-bg);
-    border-bottom: 1px solid var(--vp-c-divider);
-    font-size: 0.8em;
-    color: #666 !important;
-    display:flex;
-    align-items: center;
+    margin: 12px 0;
 
-    .filename {
-      font-weight: bold;
+    .meta {
+        border-radius: 8px;
+        padding: 0.5em 1em;
+        background-color: var(--vp-code-block-bg);
+        border-bottom: 1px solid var(--vp-c-divider);
+        font-size: 0.8em;
+        color: #666 !important;
+        display: flex;
+        align-items: center;
+
+        .filename {
+            font-weight: bold;
+        }
+
+        .file-info {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
     }
 
-    .file-info {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.25;
+    .at,
+    .line-info {
+        color: var(--vp-c-text-1);
     }
-  }
 
-  .at,.line-info {
-    color: var(--vp-c-text-1);
-  }
+    .code {
+        margin: 0;
+        padding: 1em;
+        border-radius: 4px;
+        overflow-x: auto;
+        font-size: 0.9em;
+        line-height: 1.5;
 
-  .code {
-    margin: 0;
-    padding: 1em;
-    border-radius: 4px;
-    overflow-x: auto;
-    font-size: 0.9em;
-    line-height: 1.5;
-
-    .line-number {
-      user-select: none;
-      padding-right: 1em;
+        .line-number {
+            user-select: none;
+            padding-right: 1em;
+            color: var(--vp-code-line-number-color);
+        }
     }
-  }
+}
+
+/**
+ * GitHub Dark Theme for highlight.js
+ * Matching VitePress Shiki github-dark theme
+ * -------------------------------------------------------------------------- */
+
+/* Light mode */
+:root {
+    --hljs-bg: #ffffff;
+    --hljs-fg: #24292e;
+    --hljs-comment: #6a737d;
+    --hljs-keyword: #d73a49;
+    --hljs-string: #032f62;
+    --hljs-number: #005cc5;
+    --hljs-function: #6f42c1;
+    --hljs-title: #6f42c1;
+    --hljs-params: #24292e;
+    --hljs-built-in: #005cc5;
+    --hljs-literal: #005cc5;
+    --hljs-attr: #005cc5;
+    --hljs-symbol: #e36209;
+    --hljs-meta: #6a737d;
+    --hljs-punctuation: #24292e;
+    --hljs-property: #005cc5;
+    --hljs-variable: #e36209;
+    --hljs-operator: #d73a49;
+    --hljs-type: #6f42c1;
+}
+
+/* Dark mode */
+.dark {
+    --hljs-bg: #0d1117;
+    --hljs-fg: #c9d1d9;
+    --hljs-comment: #8b949e;
+    --hljs-keyword: #ff7b72;
+    --hljs-string: #a5d6ff;
+    --hljs-number: #79c0ff;
+    --hljs-function: #d2a8ff;
+    --hljs-title: #d2a8ff;
+    --hljs-params: #c9d1d9;
+    --hljs-built-in: #79c0ff;
+    --hljs-literal: #79c0ff;
+    --hljs-attr: #79c0ff;
+    --hljs-symbol: #ffa657;
+    --hljs-meta: #8b949e;
+    --hljs-punctuation: #c9d1d9;
+    --hljs-property: #79c0ff;
+    --hljs-variable: #ffa657;
+    --hljs-operator: #ff7b72;
+    --hljs-type: #d2a8ff;
+}
+
+.github-source .code {
+    background: var(--hljs-bg);
+    color: var(--hljs-fg);
+}
+
+.github-source .hljs-comment,
+.github-source .hljs-quote {
+    color: var(--hljs-comment);
+    font-style: italic;
+}
+
+.github-source .hljs-keyword,
+.github-source .hljs-selector-tag {
+    color: var(--hljs-keyword);
+}
+
+.github-source .hljs-string,
+.github-source .hljs-template-tag,
+.github-source .hljs-template-variable,
+.github-source .hljs-addition {
+    color: var(--hljs-string);
+}
+
+.github-source .hljs-number,
+.github-source .hljs-regexp,
+.github-source .hljs-link {
+    color: var(--hljs-number);
+}
+
+.github-source .hljs-function {
+    color: var(--hljs-function);
+}
+
+.github-source .hljs-title,
+.github-source .hljs-section {
+    color: var(--hljs-title);
+}
+
+.github-source .hljs-params {
+    color: var(--hljs-params);
+}
+
+.github-source .hljs-built_in,
+.github-source .hljs-class .hljs-title {
+    color: var(--hljs-built-in);
+}
+
+.github-source .hljs-literal,
+.github-source .hljs-type {
+    color: var(--hljs-literal);
+}
+
+.github-source .hljs-attr,
+.github-source .hljs-name,
+.github-source .hljs-tag {
+    color: var(--hljs-attr);
+}
+
+.github-source .hljs-symbol,
+.github-source .hljs-bullet {
+    color: var(--hljs-symbol);
+}
+
+.github-source .hljs-meta {
+    color: var(--hljs-meta);
+}
+
+.github-source .hljs-punctuation {
+    color: var(--hljs-punctuation);
+}
+
+.github-source .hljs-property {
+    color: var(--hljs-property);
+}
+
+.github-source .hljs-variable,
+.github-source .hljs-variable\.language_ {
+    color: var(--hljs-variable);
+}
+
+.github-source .hljs-operator {
+    color: var(--hljs-operator);
+}
+
+.github-source .hljs-deletion {
+    color: #f85149;
+    background: rgba(248, 81, 73, 0.1);
+}
+
+.github-source .hljs-emphasis {
+    font-style: italic;
+}
+
+.github-source .hljs-strong {
+    font-weight: bold;
 }

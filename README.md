@@ -14,7 +14,7 @@
 
 Thank you for picking up this book!\
 This book is a guide to understanding the implementation of Vapor Mode, the next-generation implementation of Vue.js.\
-While it’s aimed at more advanced readers, I hope you find something helpful, even if only in parts!
+While it's aimed at more advanced readers, I hope you find something helpful, even if only in parts!
 
 ## Purpose of This Book
 
@@ -29,7 +29,7 @@ While it’s aimed at more advanced readers, I hope you find something helpful, 
 
 ## Intended Audience
 
-- Those interested in contributing to vuejs/core or vuejs/core-vapor
+- Those interested in contributing to vuejs/core
 - Those who want to deepen their understanding of Vue.js
 
 ## About the Author
@@ -38,24 +38,28 @@ While it’s aimed at more advanced readers, I hope you find something helpful, 
 
 <img src="./src/public/ubugeeei.jpg" alt="ubugeeei" width="200" />
 
-Vue.js member and core staff of the Vue.js Japan User Group.\
+Member of [Vue.js](https://vuejs.org) and [Vue.js Japan User Group](https://vuejs-jp.org).\
+King of [chibivue.land](https://chibivue.land).\
+Chief Engineer of [@mates-system](https://github.com/mates-system).
+
 Involved in the development of Vapor Mode from its inception (November 2023).\
 Became an external collaborator for vuejs/core-vapor in December 2023.\
-In April 2024, joined the Vue.js organization and became a member of the Vapor Team.
+In April 2024, joined the Vue.js organization and became a member of the Vapor Team.\
+In July 2025, Vapor Mode was merged into vuejs/core.
 
-https://ublog.dev/
+https://wtrclred.io/
 
 ## Note
 
-> [!CAUTION] 
+> [!CAUTION]
 > About the Implementation Repository of Vue Vapor
 >
 > Vue Vapor was initially developed in a repository called vuejs/core-vapor at launch.
 > This book is written based on vuejs/core-vapor.
 > Please make appropriate substitutions when reading.
-> 
+>
 > 1. In October 2024, vuejs/core-vapor was renamed to vuejs/vue-vapor.\
->   Repository: https://github.com/vuejs/vue-vapor
+>    Repository: https://github.com/vuejs/vue-vapor
 > 2. In July 2025, the implementation of vuejs/vue-vapor was [merged into the minor branch of vuejs/core](https://github.com/vuejs/core/releases/tag/v3.6.0-alpha.1), and vuejs/vue-vapor was archived.
 
 <div align="center">
@@ -63,7 +67,7 @@ https://ublog.dev/
 ## Sponsors
 
 <a href="https://github.com/sponsors/ubugeeei">
-  <img src="https://raw.githubusercontent.com/ubugeeei/sponsors/main/sponsors.png" alt="ubugeeei's sponsors" />
+  <img src="https://raw.githubusercontent.com/ubugeeei/sponsors/main/sponsors-transparent.png" alt="ubugeeei's sponsors" />
 </a>
 
 If you'd like to support my work, I would greatly appreciate it!

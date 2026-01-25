@@ -2,25 +2,26 @@
   "name": "reading-vuejs-core-vapor",
   "version": "1.0.0",
   "author": "ubugeeei",
-  "packageManager": "pnpm@10.13.1",
   "type": "module",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview",
     "lint": "textlint src",
-    "lint:fix": "textlint src --fix"
+    "lint:fix": "textlint src --fix",
+    "fmt": "oxfmt --write ."
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.5.5",
-    "highlight.js": "^11.10.0",
-    "node-html-parser": "^7.0.0",
-    "textlint": "^15.0.0",
+    "@types/node": "^24.0.3",
+    "highlight.js": "^11.11.1",
+    "node-html-parser": "^7.0.2",
+    "oxfmt": "^0.26.0",
+    "textlint": "^15.2.0",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
     "textlint-rule-prh": "^6.0.0",
-    "vitepress": "^1.5.0",
+    "vitepress": "2.0.0-alpha.15",
     "xmlhttprequest": "^1.8.0"
   }
 }
