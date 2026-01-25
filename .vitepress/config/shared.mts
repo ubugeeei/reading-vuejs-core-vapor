@@ -33,18 +33,15 @@ export default (): UserConfig<DefaultTheme.Config> => ({
     },
   },
   markdown: {
+    theme: {
+      light: "github-light",
+      dark: "github-dark",
+    },
     config: (md) => {
       md.use(previewGitHubSource);
     },
   },
   head: [
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/circus.css",
-      },
-    ],
     ["link", { rel: "icon", href: "/logo.png" }],
 
     // og

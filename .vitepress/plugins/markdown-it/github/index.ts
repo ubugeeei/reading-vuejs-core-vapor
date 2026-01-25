@@ -1,32 +1,38 @@
 import type { PluginSimple } from "markdown-it";
 
 import { isGithubUrl } from "./utils";
-import { parse } from "./parse";
+import { fetchGitHubSource } from "./fetch";
 import { renderToHtml } from "./render";
-import { fetchHtmlSync } from "./fetch";
 
 export const previewGitHubSource: PluginSimple = (md) => {
-  md.block.ruler.before('paragraph', 'github_link_block', (state, startLine) => {
-    const line = state.getLines(startLine, startLine + 1, state.blkIndent, false).trim()
+  md.block.ruler.before("paragraph", "github_link_block", (state, startLine) => {
+    const line = state
+      .getLines(startLine, startLine + 1, state.blkIndent, false)
+      .trim();
 
     if (!isGithubUrl(line)) {
-      return false
+      return false;
     }
 
-    const token = state.push('github_link', '', 0)
-    token.content = line
-    token.map = [startLine, startLine + 1]
+    const token = state.push("github_link", "", 0);
+    token.content = line;
+    token.map = [startLine, startLine + 1];
 
-    state.line = startLine + 1
+    state.line = startLine + 1;
 
-    return true
-  })
+    return true;
+  });
 
   md.renderer.rules.github_link = (tokens, idx) => {
-    const c = tokens[idx].content
-    const rawHtml = fetchHtmlSync(c)
-    const parsed = parse(rawHtml, c)
-    const res = renderToHtml(parsed)
-    return res
-  }
-}
+    const url = tokens[idx].content;
+    const data = fetchGitHubSource(url);
+
+    if (!data) {
+      return `<div class="github-source-error">Failed to load: ${url}</div>`;
+    }
+
+    return renderToHtml(data);
+  };
+};
+
+export { warmCache } from "./cache";

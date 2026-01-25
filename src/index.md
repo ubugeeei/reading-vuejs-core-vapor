@@ -32,12 +32,16 @@ While it’s aimed at more advanced readers, I hope you find something helpful, 
 
 <img src="/ubugeeei.jpg" alt="ubugeeei" width="200" />
 
-Vue.js member and core staff of the Vue.js Japan User Group.\
+Member of [Vue.js](https://vuejs.org) and [Vue.js Japan User Group](https://vuejs-jp.org).\
+King of [chibivue.land](https://chibivue.land).\
+Chief Engineer of [@mates-system](https://github.com/mates-system).
+
 Involved in the development of Vapor Mode from its inception (November 2023).\
 Became an external collaborator for vuejs/core-vapor in December 2023.\
-In April 2024, joined the Vue.js organization and became a member of the Vapor Team.
+In April 2024, joined the Vue.js organization and became a member of the Vapor Team.\
+In July 2025, Vapor Mode was merged into vuejs/core.
 
-https://ublog.dev/
+https://wtrclred.io/
 
 
 ## Note
@@ -62,15 +66,11 @@ If you'd like to support my work, I'd greatly appreciate it!
 
 https://github.com/sponsors/ubugeeei
 
-<img class="sponsors" src="https://raw.githubusercontent.com/ubugeeei/sponsors/main/sponsors.png" alt="ubugeeei's sponsors" width="400px">
+<img class="sponsors" src="https://raw.githubusercontent.com/ubugeeei/sponsors/main/sponsors-transparent.png" alt="ubugeeei's sponsors" width="400px">
 
 </div>
 
 <style scoped>
-img.sponsors {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
 h2:nth-of-type(1) {
   margin-top: 0px;
 }

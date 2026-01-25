@@ -2,38 +2,27 @@ import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
 import typescript from "highlight.js/lib/languages/typescript";
 
-import type { GitHubSourceDescriptor } from "./parse";
+import type { GitHubSourceData } from "./fetch";
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("js", javascript);
 hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("ts", typescript);
 
-export function renderToHtml(descriptor: GitHubSourceDescriptor): string {
-  const { filename, lang, commitHashOrBranch, lines, codeLines } = descriptor;
-  const [org, repo, ...rest] = filename.split("/");
+export function renderToHtml(data: GitHubSourceData): string {
+  const { owner, repo, commit, path, filename, lang, lines, lineStart, lineEnd, url } = data;
 
-  const commitLink = `https://github.com/${org}/${repo}/commit/${commitHashOrBranch}`
+  const commitLink = `https://github.com/${owner}/${repo}/commit/${commit}`;
+  const codeLink = url;
 
-  let codeLink = `https://github.com/${org}/${repo}/blob/${commitHashOrBranch}/${rest.join(
-    "/"
-  )}`;
-  if (lines) {
-    codeLink += `#L${lines.start + 1}`;
-    if (lines.end && lines.end !== lines.start) {
-      codeLink += `-L${lines.end}`;
-    }
-  }
+  const codeContent = lines.join("\n");
 
-  const c = lines
-    ? codeLines.slice(lines.start, lines.end).join("\n")
-    : codeLines.join("\n");
-
-  const code = hljs.highlight(c, {
-    language: lang,
-  }).value.split("\n").map((line, i) => {
-    return `<span class="line-number">${i + 1 + (lines?.start ?? 0)}</span>${line}`
-  });
+  const highlighted = hljs
+    .highlight(codeContent, { language: lang })
+    .value.split("\n")
+    .map((line, i) => {
+      return `<span class="line-number">${i + lineStart}</span>${line}`;
+    });
 
   return `
 <div class="github-source">
@@ -43,9 +32,9 @@ export function renderToHtml(descriptor: GitHubSourceDescriptor): string {
       <a href="${codeLink}" target="_blank"
         ><span class="filename">${filename}</span></a
       ><span class="line-info"
-        >Lines ${lines?.start ? lines.start + 1 : 1} to ${lines?.end ?? code.length} in <a href="${commitLink}" target="_blank"><span class="commit">${commitHashOrBranch.slice(0, 10)}</span></a></span>
+        >Lines ${lineStart} to ${lineEnd} in <a href="${commitLink}" target="_blank"><span class="commit">${commit.slice(0, 10)}</span></a></span>
     </span>
   </div>
-  <pre class="code">${code.join("\n")}</pre>
+  <pre class="code">${highlighted.join("\n")}</pre>
 </div>`;
 }
